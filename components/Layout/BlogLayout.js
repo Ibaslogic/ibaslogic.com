@@ -2,6 +2,7 @@ import Image from "next/image";
 import Layout from "./Layout";
 import { parseISO, format } from "date-fns";
 import ViewCounter from "../viewCounter";
+import LikeCount from "../LikeCount";
 
 const domain = `https://ibaslogic.com`;
 
@@ -52,6 +53,7 @@ const BlogLayout = ({ children, frontMatter }) => {
               <div>
                 <ViewCounter slug={slug} />
                 <p>{readingTime.text}</p>
+                <LikeCount id={slug} />
               </div>
             </div>
           </div>
