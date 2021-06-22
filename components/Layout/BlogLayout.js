@@ -50,10 +50,9 @@ const BlogLayout = ({ children, frontMatter }) => {
                   {format(parseISO(date), "MMMM dd, yyyy")}
                 </p>
               </div>
-              <div>
+              <div className="flex flex-wrap">
                 <ViewCounter slug={slug} />
                 <p>{readingTime.text}</p>
-                <LikeCount id={slug} />
               </div>
             </div>
           </div>
@@ -61,7 +60,10 @@ const BlogLayout = ({ children, frontMatter }) => {
           <div className="prose max-w-none w-full">{children}</div>
         </article>
 
-        <aside className="md:order-1 md:w-[200px]">LikeIcon/socialShare</aside>
+        <aside className="md:order-1 md:w-[200px]">
+          <LikeCount id={slug} />
+          {/* share button */}
+        </aside>
         <div className="md:flex-grow md:order-3"></div>
       </div>
     </Layout>

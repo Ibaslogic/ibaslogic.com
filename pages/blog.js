@@ -17,16 +17,16 @@ const BlogPage = ({ postsData }) => {
       title="Comprehensive Articles - Ibaslogic"
       description="Read up-to-date dev post"
     >
-      <div>
+      <ul className="w-full px-3 sm:px-5 mx-auto max-w-4xl grid gap-y-6">
         {!postsData.length && (
-          <p className="flex text-4xl font-medium justify-center items-center min-h-screen">
+          <li className="flex text-4xl font-medium justify-center items-center min-h-screen">
             No post found
-          </p>
+          </li>
         )}{" "}
         {postsData.map((frontmatter) => (
           <BlogItem key={frontmatter.slug} {...frontmatter} />
         ))}
-      </div>
+      </ul>
     </Layout>
   );
 };

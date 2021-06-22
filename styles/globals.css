@@ -14,6 +14,8 @@
     U+FEFF, U+FFFD;
 }
 
+/* custom styles */
+
 html {
   scroll-behavior: smooth;
 }
@@ -26,4 +28,13 @@ html {
 
 .prose *:hover > .anchor {
   @apply visible no-underline text-gray-300;
+}
+
+@layer utilities {
+  .grid-custom {
+    grid-template-columns: 60px 1fr;
+  }
+  .grid-custom-col-sm {
+    grid-template-columns: 60px 1fr 1fr;
+  }
 }
