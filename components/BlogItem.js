@@ -1,9 +1,15 @@
 import Link from "next/link";
 import Image from "next/image";
-import ViewCounter from "./viewCounter";
+
+import useSWR from "swr";
+import fetcher from "../lib/fetcher";
 
 const BlogItem = (props) => {
   const { title, description, slug, featured, draft } = props;
+
+  const { data } = useSWR(`/api/views/${slug}`, fetcher);
+  const views = data?.total;
+
   return (
     draft === false && (
       <li>
@@ -25,7 +31,9 @@ const BlogItem = (props) => {
               <div className="text-black sm:col-span-2 sm:col-end-4">
                 {draft === false && (
                   <span className="text-xs text-gray-500">
-                    <ViewCounter slug={slug} />
+                    {`${
+                      views ? new Number(views).toLocaleString() : "–––"
+                    } views`}
                   </span>
                 )}
                 <h2 className="font-bold text-lg md:text-xl">{title}</h2>
