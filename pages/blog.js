@@ -31,10 +31,10 @@ const BlogPage = ({ postsData }) => {
         <PageHeading title="Blog." />
         <div className="relative mb-3">
           <input
-            aria-label="Begin search"
+            aria-label="Search the blog"
             type="text"
             onChange={(e) => setSearchPosts(e.target.value)}
-            placeholder="Begin search..."
+            placeholder="Search the blog..."
             className="px-4 py-2 border border-gray-300 outline-none focus:border-blue-300  block rounded-md bg-white text-gray-700 w-full"
           />
           <svg

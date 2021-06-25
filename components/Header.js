@@ -2,7 +2,6 @@ import Link from "next/link";
 import navLinks from "../data/navLinks";
 
 import SocialItem from "./SocialItem";
-import SocialButton from "./SocialButton";
 
 // import icons from react-icons
 import { FaTwitter, FaGithub } from "react-icons/fa";
@@ -10,12 +9,12 @@ import { FaTwitter, FaGithub } from "react-icons/fa";
 
 const Header = () => {
   return (
-    <header className="shadow">
+    <header className="shadow bg-[#20232a] text-gray-300">
       <div className="w-full px-3 sm:px-5 mx-auto max-w-6xl text-center">
         <nav className="relative">
           <div className="flex justify-between items-center flex-wrap py-3 ">
             <Link href="/">
-              <a className="flex mr-4">
+              <a className="flex mr-12">
                 <img className="w-9 h-auto" src="/images/logo.png" alt="" />
               </a>
             </Link>
@@ -23,7 +22,7 @@ const Header = () => {
               {/*  */}
               {navLinks.map(({ link, label }, index) => (
                 <li
-                  className="last:pr-8 text-gray-700 hover:text-black"
+                  className="last:pr-8 font-normal hover:text-white"
                   key={index}
                 >
                   <Link href={`${link}`}>{label}</Link>
@@ -33,18 +32,6 @@ const Header = () => {
 
             <div className="flex-1" />
             <div className="flex items-center">
-              {/* <SocialButton
-                Icon={BiStar}
-                link="#"
-                label="Star on Github"
-                className="flex items-center space-x-1 my-0 mx-1.5 py-2 px-2 text-xs rounded text-gray-800 bg-[#eff3f6] border-gray-300"
-              /> */}
-              <SocialButton
-                Icon={FaTwitter}
-                link="https://twitter.com/intent/follow?screen_name=ibaslogic&amp;region=follow_link"
-                label="Follow @ibaslogic"
-                className="flex items-center space-x-1 my-0 mx-1.5 py-2 px-2 text-xs rounded text-white bg-[#066cbb] border-[#066cbb]"
-              />
               <SocialItem Icon={FaGithub} link="#" title="Star on Github" />
             </div>
           </div>
