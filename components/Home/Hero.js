@@ -22,7 +22,7 @@ const Hero = () => {
           />
         </div>
         <div className=" text-gray-500 py-[2rem] md:py-12">
-          <h1 className="text-[2.5rem] sm:text-5xl lg:text-7xl text-[#111] mb-6 md:mb-8 font-extrabold tracking-tight">
+          <h1 className="text-[2.5rem] leading-tight sm:text-5xl lg:text-7xl text-[#111] mb-6 md:mb-8 font-extrabold tracking-tight">
             Do you want to build a real-world web project?
             {/* Learn modern web tech and tools. */}
             {/* Web Dev Articles for the Self-Starters. */}
