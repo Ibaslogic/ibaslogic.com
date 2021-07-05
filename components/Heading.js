@@ -1,10 +1,10 @@
 const Heading = ({ title, desc }) => {
   return (
-    <div className="mt-8 md:mt-12 mb-7 custom_heading">
-      <h2 className="text-black font-bold text-2xl md:text-3xl tracking-tight capitalize">
+    <div className="custom_heading">
+      <h2 className="text-black font-bold text-[2rem] tracking-tighter capitalize">
         {title}
       </h2>
-      {desc && <p className="text-gray-600">{desc}</p>}
+      {desc && <p className="text-[#696969] mt-4">{desc}</p>}
     </div>
   );
 };

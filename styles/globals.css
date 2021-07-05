@@ -52,4 +52,26 @@ html {
   .custom_heading_style .custom_heading {
     text-align: center;
   }
+  .noFeatured .removeFeatured {
+    display: none;
+  }
+  .noFeatured h2 {
+    font-size: 1.125em;
+    line-height: 1.4;
+  }
+  .noFeatured p,
+  .noFeatured span {
+    font-size: 14px;
+    line-height: 1.65;
+  }
+  .featured__home {
+    border: 1px solid #eaeaea;
+    padding: 20px;
+    border-radius: 5px;
+    transition: box-shadow 0.2s ease, border 0.2s ease;
+  }
+  .featured__home:hover {
+    border: 1px solid transparent;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  }
 }

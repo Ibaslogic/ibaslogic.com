@@ -40,7 +40,7 @@ const Layout = ({ children, ...customMeta }) => {
       </Head>
       <div className="flex-grow">
         <Header />
-        <main>{children}</main>
+        <main className="pt-16">{children}</main>
       </div>
       <Footer />
     </div>

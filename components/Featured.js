@@ -4,16 +4,23 @@ import Image from "next/image";
 import useSWR from "swr";
 import fetcher from "../lib/fetcher";
 
-const FeaturedPost = ({ title, description, slug, featured }) => {
+const FeaturedPost = ({
+  title,
+  description,
+  slug,
+  featured,
+  containerStyle,
+  homeStyle,
+}) => {
   const { data } = useSWR(`/api/views/${slug}`, fetcher);
   const views = data?.total;
 
   return (
-    <div>
+    <div className={homeStyle}>
       <Link href={`/${slug}`}>
         <a className="block">
-          <div className="grid mb-8 grid-custom sm:grid-custom-col-sm">
-            <div className="flex items-center sm:row-start-1 sm:row-end-4">
+          <div className={containerStyle}>
+            <div className="flex items-center sm:row-start-1 sm:row-end-4 removeFeatured">
               {featured ? (
                 <Image
                   width={50}

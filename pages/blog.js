@@ -56,7 +56,7 @@ const BlogPage = ({ postsData }) => {
           <section>
             <Heading title="Featured Posts" />
             <div>
-              <PopularPosts />
+              <PopularPosts containerStyle="grid mb-8 grid-custom sm:grid-custom-col-sm" />
             </div>
           </section>
         )}

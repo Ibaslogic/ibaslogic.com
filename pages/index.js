@@ -1,20 +1,12 @@
 import Layout from "../components/Layout/Layout";
 import Hero from "../components/Home/Hero";
-import Summary from "../components/Home/Summary";
-import PopularPosts from "../components/PopularPosts";
-import Heading from "../components/Heading";
+import PopularPostSection from "../components/Home/PopularPostSection";
 
 const Home = () => {
   return (
     <Layout>
       <Hero />
-      {/* <Summary /> */}
-      <section className="px-3 custom_heading_style sm:px-5 mx-auto max-w-screen-lg xl:max-w-screen-xl ">
-        <Heading title="popular post" desc="Level up your Dev knowledge" />
-        <div className="lg:flex">
-          <PopularPosts />
-        </div>
-      </section>
+      <PopularPostSection homeStyle="featured__home" />
     </Layout>
   );
 };

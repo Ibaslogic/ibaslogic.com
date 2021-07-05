@@ -21,9 +21,9 @@ const Header = () => {
   };
 
   return (
-    <header className="shadow bg-white h-[64px] w-full text-gray-800">
+    <header className="fixed z-10 shadow bg-white h-[62px] w-full text-gray-800">
       {/* bg-[#20232a] */}
-      <div className="flex justify-between items-center px-3 sm:px-5 max-w-screen-lg xl:max-w-screen-xl mx-auto h-[64px] flex-wrap">
+      <div className="flex justify-between items-center px-3 sm:px-4 max-w-5xl mx-auto h-[62px] flex-wrap">
         {/* w-full px-3 sm:px-5 mx-auto max-w-6xl sm:text-center */}
         <div className="flex items-center justify-start flex-row-reverse flex-nowrap ">
           <div className="ml-2 sm:ml-0 sm:mr-5">
