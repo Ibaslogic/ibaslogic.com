@@ -22,7 +22,7 @@ const Hero = () => {
           />
         </div>
         <div className=" text-gray-500 py-[2rem] md:py-12">
-          <h1 className="text-[48px] sm:text-[65px] lg:text-[85px] leading-[1.2em] sm:leading-[1.1em] lg:leading-none sm:text-6xl text-[#111] mb-6 md:mb-8 font-extrabold tracking-tighter">
+          <h1 className="text-[54px] sm:text-[65px] lg:text-[90px] leading-[1.2em] sm:leading-[1.1em] lg:leading-none sm:text-6xl text-[#111] mb-6 md:mb-8 font-extrabold tracking-tighter">
             The Modern Dev Tutorial for Beginners
           </h1>
           <p className="text-base md:text-xl mb-12">
@@ -31,7 +31,7 @@ const Hero = () => {
             Just practical guides that work.
           </p>
           <div className="flex justify-center">
-            <button className="text-left py-3 px-4 bg-[#111827] hover:bg-[#202b42] font-semibold text-white border-[#111827] tracking-widest rounded-md">
+            <button className="text-left py-3 px-4 bg-[#111827] hover:bg-[#202b42] text-white border-[#111827] tracking-widest rounded-md">
               Get Started
             </button>
             <div className="flex items-center group ml-3 flex-wrap">

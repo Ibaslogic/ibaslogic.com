@@ -37,8 +37,8 @@ const Header = () => {
             onClick={openDrawer}
             className="relative cursor-pointer w-[38px] h-[60px] bg-transparent border-none focus:outline-none mr-2 px-1 sm:hidden"
           >
-            <div className="absolute block h-[1px] w-[22px] bg-gray-800 top-[25px]" />
-            <div className="absolute block h-[1px] w-[22px] bg-gray-800 top-[33px]" />
+            <div className="absolute block h-[2px] w-[22px] bg-gray-600 top-[25px]" />
+            <div className="absolute block h-[2px] w-[22px] bg-gray-600 top-[33px]" />
           </button>
         </div>
         <nav className="w-full order-2 block sm:order-none sm:h-auto sm:w-auto">
