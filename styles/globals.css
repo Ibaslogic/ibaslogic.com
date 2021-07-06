@@ -74,4 +74,13 @@ html {
     border: 1px solid transparent;
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
   }
+  .nl {
+    display: block;
+  }
+
+  @media screen and (min-width: 480px) {
+    .nl {
+      display: inline-block;
+    }
+  }
 }
