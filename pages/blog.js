@@ -35,7 +35,7 @@ const BlogPage = ({ postsData }) => {
             type="text"
             onChange={(e) => setSearchPosts(e.target.value)}
             placeholder="Search the blog..."
-            className="px-4 py-2 border border-gray-300 outline-none focus:border-blue-300  block rounded-md bg-white text-gray-700 w-full"
+            className="px-4 py-2 border border-gray-300 outline-none focus:border-gray-700 block rounded-md bg-white text-gray-700 w-full"
           />
           <svg
             className="absolute right-3 top-3 h-5 w-5 text-gray-400 dark:text-gray-300"
