@@ -20,7 +20,7 @@ const Header = () => {
 
   return (
     <header className="fixed z-10 shadow bg-white h-[62px] w-full text-[#696969]">
-      <div className="flex justify-between items-center px-3 sm:px-4 max-w-5xl mx-auto h-[62px] flex-wrap">
+      <div className="flex justify-between items-center px-4 md:px-5 max-w-5xl mx-auto h-[62px] flex-wrap">
         <div className="flex items-center justify-start flex-row-reverse flex-nowrap ">
           <div className="ml-2 sm:ml-0 sm:mr-5">
             <Link href="/">

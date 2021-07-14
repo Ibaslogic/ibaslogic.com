@@ -27,9 +27,9 @@ const BlogPage = ({ postsData }) => {
       title="Comprehensive Articles - Ibaslogic"
       description="Read up-to-date dev post"
     >
-      <div className="w-full px-3 sm:px-5 mx-auto max-w-4xl">
+      <div className="w-full px-4 pt-12 pb-12 md:px-5 mx-auto max-w-4xl">
         <PageHeading title="Blog." />
-        <div className="relative mb-3">
+        <div className="relative mb-6">
           <input
             aria-label="Search the blog"
             type="text"
@@ -55,7 +55,7 @@ const BlogPage = ({ postsData }) => {
         {!searchPosts && (
           <section>
             <Heading title="Featured Posts" />
-            <div>
+            <div className="mt-6">
               <PopularPosts containerStyle="grid mb-8 grid-custom sm:grid-custom-col-sm" />
             </div>
           </section>
@@ -63,7 +63,7 @@ const BlogPage = ({ postsData }) => {
 
         <section>
           <Heading title="All Stories" />
-          <ul className="grid">
+          <ul className="grid mt-6">
             {!filteredPosts.length && <li className="">No posts detected</li>}{" "}
             {filteredPosts.map((frontmatter) => (
               <BlogItem key={frontmatter.slug} {...frontmatter} />

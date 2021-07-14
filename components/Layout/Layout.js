@@ -1,6 +1,6 @@
 import Head from "next/head";
 
-import Footer from "../Footer";
+import Footer from "../Footer/Footer";
 import Header from "../Header";
 
 const Layout = ({ children, ...customMeta }) => {

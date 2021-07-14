@@ -1,7 +1,8 @@
 import Layout from "../components/Layout/Layout";
-import SeriesItem from "../components/SeriesItem";
 import reactSeries from "../data/allSeriesPost/react-series";
 import gatsbySeries from "../data/allSeriesPost/gatsby-series";
+import BlogItem from "../components/BlogItem";
+import Heading from "../components/Heading";
 
 const SeriesPage = () => {
   return (
@@ -10,21 +11,23 @@ const SeriesPage = () => {
       description="Read up-to-date dev post"
     >
       <section>
-        <div>
-          <div>React Section</div>
-          <ol>
-            {reactSeries.map(({ title, href }) => (
-              <SeriesItem key={title} title={title} href={href} />
-            ))}
-          </ol>
-        </div>
-        <div>
-          <div>Gatsby Section</div>
-          <ol>
-            {gatsbySeries.map(({ title, href }) => (
-              <SeriesItem key={title} title={title} href={href} />
-            ))}
-          </ol>
+        <div className="w-full px-4 pt-12 pb-12 md:px-5 mx-auto max-w-4xl">
+          <div>
+            <Heading title="React tutorial series." />
+            <ol className="mt-6 mb-6">
+              {reactSeries.map(({ title, href }) => (
+                <BlogItem key={title} title={title} slug={href} />
+              ))}
+            </ol>
+          </div>
+          <div>
+            <Heading title="Gatsby tutorial series." />
+            <ol className="mt-6">
+              {gatsbySeries.map(({ title, href }) => (
+                <BlogItem key={title} title={title} slug={href} />
+              ))}
+            </ol>
+          </div>
         </div>
       </section>
     </Layout>
