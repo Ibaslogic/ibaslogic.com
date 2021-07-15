@@ -17,7 +17,7 @@ const FeaturedPost = ({
 
   return (
     <div className={homeStyle}>
-      <Link href={`/${slug}`}>
+      <Link href={`/${slug}/`}>
         <a className="block">
           <div className={containerStyle}>
             <div className="flex items-center sm:row-start-1 sm:row-end-4 removeFeatured">

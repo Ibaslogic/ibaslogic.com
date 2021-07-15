@@ -11,7 +11,7 @@ const BlogItem = (props) => {
 
   return (
     <li>
-      <Link href={`/${slug}`}>
+      <Link href={`/${slug}/`}>
         <a className="block p-2 hover:bg-gray-100">
           <div className="flex flex-wrap items-center justify-between">
             <h2 className="text-gray-900 mr-2 font-medium text-lg">{title}</h2>

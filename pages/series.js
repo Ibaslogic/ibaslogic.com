@@ -13,7 +13,7 @@ const SeriesPage = () => {
       <section>
         <div className="w-full px-4 pt-12 pb-12 md:px-5 mx-auto max-w-4xl">
           <div>
-            <Heading title="React tutorial series." />
+            <Heading title="React series." />
             <ol className="mt-6 mb-6">
               {reactSeries.map(({ title, href }) => (
                 <BlogItem key={title} title={title} slug={href} />
@@ -21,7 +21,7 @@ const SeriesPage = () => {
             </ol>
           </div>
           <div>
-            <Heading title="Gatsby tutorial series." />
+            <Heading title="Gatsby series." />
             <ol className="mt-6">
               {gatsbySeries.map(({ title, href }) => (
                 <BlogItem key={title} title={title} slug={href} />

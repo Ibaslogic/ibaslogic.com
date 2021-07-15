@@ -40,12 +40,16 @@ const LikeCount = ({ id }) => {
   const btnDisabled = {
     color: "#000",
     cursor: "none",
-    opacity: "0.3",
+    opacity: "0.2",
   };
 
   return (
-    <div>
-      <button onClick={like} style={disabled ? btnDisabled : null}>
+    <div className="lg:cust_line mt-8">
+      <button
+        className="grid grid-cols-2 gap-x-2 items-center text-lg focus:outline-none"
+        onClick={like}
+        style={disabled ? btnDisabled : null}
+      >
         <BiLike /> {likes ? likes.toLocaleString() : "---"}
       </button>
     </div>

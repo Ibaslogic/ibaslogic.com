@@ -22,8 +22,7 @@ html {
 
 .prose .anchor {
   @apply absolute invisible;
-  margin-left: -1em;
-  padding-right: 0.5em;
+  margin-left: 10px;
 }
 
 .prose *:hover > .anchor {
@@ -82,5 +81,18 @@ html {
     .nl {
       display: inline-block;
     }
+  }
+
+  .cust_line {
+    position: relative;
+  }
+
+  .cust_line:after {
+    content: "";
+    position: absolute;
+    width: 50%;
+    height: 1px;
+    bottom: 46px;
+    background: #f7f7f7;
   }
 }

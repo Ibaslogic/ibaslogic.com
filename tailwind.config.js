@@ -21,7 +21,7 @@ module.exports = {
               code: { color: theme("colors.blue.400") },
             },
             "h2,h3,h4": {
-              //
+              "scroll-margin-top": spacing[20],
             },
             code: { color: theme("colors.pink.500") },
             "blockquote p:first-of-type::before": false,
