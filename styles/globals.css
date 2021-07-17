@@ -29,6 +29,10 @@ html {
   @apply visible no-underline text-gray-300;
 }
 
+.authorInfo {
+  @apply text-[#686868] block mt-2 text-xs font-normal;
+}
+
 @layer utilities {
   .grid-custom {
     grid-template-columns: 60px 1fr;
@@ -94,5 +98,37 @@ html {
     height: 1px;
     bottom: 46px;
     background: #f7f7f7;
+  }
+
+  .authorInfoWrap {
+    grid-template-columns: 120px 1fr;
+    grid-template-areas:
+      "image info"
+      "content content";
+  }
+
+  @media screen and (min-width: 480px) {
+    .authorInfoWrap {
+      grid-template-areas:
+        "image info"
+        "image content";
+    }
+  }
+
+  /* @media screen and (min-width: 768px) {
+    .authorInfoWrap {
+      grid-template-areas:
+        "image info"
+        "content content";
+    }
+  } */
+  .image {
+    grid-area: image;
+  }
+  .info {
+    grid-area: info;
+  }
+  .content {
+    grid-area: content;
   }
 }

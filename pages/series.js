@@ -10,26 +10,26 @@ const SeriesPage = () => {
       title="Series Posts - Ibaslogic"
       description="Read up-to-date dev post"
     >
-      <section>
+      <div>
         <div className="w-full px-4 pt-12 pb-12 md:px-5 mx-auto max-w-4xl">
-          <div>
+          <section>
             <Heading title="React series." />
             <ol className="mt-6 mb-6">
               {reactSeries.map(({ title, href }) => (
                 <BlogItem key={title} title={title} slug={href} />
               ))}
             </ol>
-          </div>
-          <div>
+          </section>
+          <section>
             <Heading title="Gatsby series." />
             <ol className="mt-6">
               {gatsbySeries.map(({ title, href }) => (
                 <BlogItem key={title} title={title} slug={href} />
               ))}
             </ol>
-          </div>
+          </section>
         </div>
-      </section>
+      </div>
     </Layout>
   );
 };

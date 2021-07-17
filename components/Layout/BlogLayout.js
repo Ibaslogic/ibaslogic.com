@@ -42,7 +42,7 @@ const BlogLayout = ({ children, frontMatter }) => {
               {title}
             </h1>
             <div className="sm:flex justify-between text-sm text-gray-500">
-              <div className="flex flex-wrap">
+              <div className="flex flex-wrap items-center">
                 <Image
                   width={25}
                   height={25}
