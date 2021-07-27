@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-import { firebase } from "../lib/db";
+import firebase from "../lib/db";
 import { BiLike } from "react-icons/bi";
 
 const LikeCount = ({ id }) => {
