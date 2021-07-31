@@ -2,9 +2,10 @@ import Image from "next/image";
 import Layout from "./Layout";
 import { parseISO, format } from "date-fns";
 import ViewCounter from "../viewCounter";
-import LikeCount from "../LikeCount";
+// import LikeCount from "../LikeCount";
 import { FaFacebookF, FaLinkedinIn, FaTwitter } from "react-icons/fa";
 import SocialItem from "../SocialItem";
+// import LikesCounter from "../LikesCounter";
 
 const domain = `https://ibaslogic.com`;
 
@@ -99,7 +100,8 @@ const BlogLayout = ({ children, frontMatter }) => {
               <p className="capitalize text-base mb-7 font-semibold text-gray-800 lg:hidden">
                 Like this piece?
               </p>
-              <LikeCount id={slug} />
+              {/* <LikeCount id={slug} /> */}
+              {/* <LikesCounter id={slug} /> */}
             </div>
           </div>
         </aside>
