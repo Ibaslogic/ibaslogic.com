@@ -11,7 +11,7 @@ const AboutContent = () => {
   return (
     <div className="text-gray-600 max-w-full">
       <section className="mb-8">
-        <PageHeading title="New here? What Ibaslogic is all about" />
+        <PageHeading title="What Ibaslogic is all about" />
         <AboutSection section={topSection} />
       </section>
       <section className="mb-8">

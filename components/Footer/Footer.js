@@ -2,6 +2,10 @@ import FooterList from "./FooterList";
 import SocialFollow from "./socialFollow";
 import FooterTitle from "./FooterTitle";
 
+import config from "../../data/siteMetadata.js";
+
+const { author } = config;
+
 const Footer = () => {
   const learn = [
     { item: "blog", url: "#" },
@@ -23,8 +27,8 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-gray-50 text-gray-500 text-[0.9em] pt-12 pb-9 sm:pt-12 sm:pb-9 border border-solid border-[#eaeaea]">
-      <div className="px-4 md:px-5 mx-auto max-w-5xl">
+    <footer className="bg-gray-50 text-[#24292f] text-[0.9em] pt-12 pb-9 sm:pt-12 sm:pb-9 border border-solid border-[#eaeaea] segoe-font">
+      <div className="px-6 md:px-5 mx-auto max-w-[68rem]">
         <div className="grid grid-cols-1 gap-y-6 sm:flex sm:flex-row sm:flex-wrap sm:justify-between">
           <div className="grid grid-cols-2 gap-6 sm:flex sm:flex-wrap sm:justify-between sm:flex-grow sm:mr-8 md:mr-20">
             <FooterList title="learn" list={learn} />
@@ -46,7 +50,7 @@ const Footer = () => {
               rel="noopener noreferrer"
               title="twitter"
             >
-              Ibas Majid
+              {author}
             </a>
           </p>
         </div>

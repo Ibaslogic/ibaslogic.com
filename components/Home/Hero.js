@@ -5,7 +5,7 @@ import { TiLocationArrow } from "react-icons/ti";
 
 const Hero = () => {
   return (
-    <section className="py-12 md:pt-24">
+    <section className="py-12 md:pt-16">
       <div className="w-full px-4 md:px-5 mx-auto max-w-5xl text-center">
         <div className="flex justify-center">
           <SocialButton

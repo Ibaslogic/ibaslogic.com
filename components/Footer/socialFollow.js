@@ -25,7 +25,7 @@ const SocialFollow = () => {
 
         return (
           <li
-            className="mr-6 mb-2 lg:mb-0 text-2xl last:mr-0 hover:text-gray-700 transition"
+            className="mr-6 mb-2 lg:mb-0 text-2xl last:mr-0 hover:opacity-75 transition"
             key={name}
           >
             <a

@@ -1,7 +1,7 @@
 const SocialItem = ({ Icon, link, title, style }) => {
   return (
     <a
-      className={`text-[21px] ${style}`}
+      className={`${style}`}
       href={link}
       title={title}
       target="_blank"

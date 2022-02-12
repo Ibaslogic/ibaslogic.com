@@ -5,9 +5,12 @@ import NewsletterHome from "../components/Home/NewsletterHome";
 
 const Home = () => {
   return (
-    <Layout>
+    <Layout
+      title="Helping You Improving Your Web Dev Knowledge!"
+      description="Web dev Articles for the Self-Starters."
+    >
       <Hero />
-      <PopularPostSection homeStyle="featured__home" />
+      <PopularPostSection />
       <NewsletterHome />
     </Layout>
   );

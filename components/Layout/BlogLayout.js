@@ -2,12 +2,17 @@ import Image from "next/image";
 import Layout from "./Layout";
 import { parseISO, format } from "date-fns";
 import ViewCounter from "../viewCounter";
-// import LikeCount from "../LikeCount";
 import { FaFacebookF, FaLinkedinIn, FaTwitter } from "react-icons/fa";
+import { FiEdit2 } from "react-icons/fi";
+// FiFacebook, FiLinkedin, FiTwitter,
 import SocialItem from "../SocialItem";
-// import LikesCounter from "../LikesCounter";
+import config from "../../data/siteMetadata.js";
 
-const domain = `https://ibaslogic.com`;
+const { author_avatar, siteUrl, twitterShare, siteRepo } = config;
+
+const editPost = (slug) => {
+  return `${siteRepo}/edit/main/data/posts/${slug}.mdx`;
+};
 
 const BlogLayout = ({ children, frontMatter }) => {
   const {
@@ -19,27 +24,28 @@ const BlogLayout = ({ children, frontMatter }) => {
     readingTime,
     author,
     slug,
+    external_post,
+    external_url,
   } = frontMatter;
 
   const date = publishedAt === updatedAt ? publishedAt : updatedAt;
-
-  const avatar = author ? author : `/avatar.png`;
-
-  const baseUrl = `https://ibaslogic.com/`;
-  const twitterHandle = `ibaslogic`;
+  const avatar = author ? author : author_avatar;
 
   return (
     <Layout
-      title={`${title} - Ibaslogic`}
+      title={`${title}`}
       description={description}
-      image={`${domain}${featured}`}
+      featured={featured}
+      image={`${siteUrl}${featured}`}
       date={new Date(updatedAt).toISOString()}
       type="article"
+      external_post={external_post}
+      external_url={external_url}
     >
-      <div className="w-full px-4 pt-12 pb-12 md:px-5 lg:flex mx-auto max-w-5xl">
+      <div className="w-full px-6 pt-12 pb-12 md:px-5 lg:flex mx-auto max-w-5xl">
         <article className="max-w-[700px] mx-auto lg:mx-5 lg:order-2">
           <div className="space-y-5 mb-8">
-            <h1 className="font-bold text-3xl md:text-5xl text-black tracking-tight">
+            <h1 className="font-bold text-[2rem] md:text-5xl leading-[1.3] text-black tracking-tight">
               {title}
             </h1>
             <div className="sm:flex justify-between text-sm text-gray-500">
@@ -69,6 +75,19 @@ const BlogLayout = ({ children, frontMatter }) => {
           </div>
 
           <div className="prose max-w-none w-full">{children}</div>
+          <div className="text-sm text-gray-500 mt-8">
+            <a
+              className="inline-flex items-center"
+              href={editPost(slug)}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {"Edit post on GitHub"}{" "}
+              <span className="ml-2">
+                <FiEdit2 />
+              </span>
+            </a>
+          </div>
         </article>
 
         <aside className="max-w-[700px] mx-auto mt-14 lg:mt-0 lg:order-1 lg:w-[160px]">
@@ -79,29 +98,23 @@ const BlogLayout = ({ children, frontMatter }) => {
             <div className="flex flex-row items-center mb-8 lg:items-start lg:flex-col">
               <SocialItem
                 Icon={FaTwitter}
-                link={`https://twitter.com/share?url=${baseUrl}${slug}/&text=${title}&via=${twitterHandle}`}
+                link={`https://twitter.com/share?url=${siteUrl}/${slug}/&text=${title}&via=${twitterShare}`}
                 title="twitter"
-                style="hover:text-gray-800 transition lg:mt-[10px] mr-7 mb-[10px]"
+                style="shareIconStyle lg:mt-[10px]"
               />
               <SocialItem
                 Icon={FaFacebookF}
-                link={`https://www.facebook.com/sharer/sharer.php?u=${baseUrl}${slug}/`}
+                link={`https://www.facebook.com/sharer/sharer.php?u=${siteUrl}/${slug}/`}
                 title="facebook"
-                style="hover:text-gray-800 transition lg:mt-[25px] mr-7 mb-[10px]"
+                style="shareIconStyle lg:mt-[13px]"
               />
+
               <SocialItem
                 Icon={FaLinkedinIn}
-                link={`https://www.linkedin.com/shareArticle?url=${baseUrl}${slug}/`}
+                link={`https://www.linkedin.com/shareArticle?url=${siteUrl}/${slug}/`}
                 title="linkedin"
-                style="hover:text-gray-800 transition lg:mt-[25px] mr-7 mb-[10px]"
+                style="shareIconStyle lg:mt-[13px]"
               />
-            </div>
-            <div>
-              <p className="capitalize text-base mb-7 font-semibold text-gray-800 lg:hidden">
-                Like this piece?
-              </p>
-              {/* <LikeCount id={slug} /> */}
-              {/* <LikesCounter id={slug} /> */}
             </div>
           </div>
         </aside>

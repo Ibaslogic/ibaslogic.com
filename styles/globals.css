@@ -4,6 +4,22 @@
 @tailwind utilities;
 
 @font-face {
+  font-family: "Merriweather";
+  src: url(/fonts/Merriweather-Regular.woff2) format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Merriweather";
+  src: url(/fonts/Merriweather-Bold.woff2) format("woff2");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
   font-family: "Inter";
   font-style: normal;
   font-weight: 100 900;
@@ -20,9 +36,21 @@ html {
   scroll-behavior: smooth;
 }
 
+.prose {
+  color: #1a1a1a;
+  font-family: Merriweather;
+  /* font-size: 1.125rem; */
+  font-weight: 400;
+  line-height: 1.8;
+}
+
 .prose .anchor {
   @apply absolute invisible;
-  margin-left: 10px;
+  margin-left: 5px;
+}
+
+.prose h2 {
+  @apply mb-4 mt-[1em] md:text-[2rem];
 }
 
 .prose *:hover > .anchor {
@@ -33,7 +61,14 @@ html {
   @apply text-[#686868] block mt-2 text-xs font-normal;
 }
 
+.shareIconStyle {
+  @apply text-[20px] text-black hover:text-white rounded-full bg-[#f3f4f7] p-[10px] hover:bg-[#6678ff] transition mr-7 mb-[10px];
+}
+
 @layer utilities {
+  .segoe-font {
+    font-family: Segoe UI;
+  }
   .grid-custom {
     grid-template-columns: 60px 1fr;
   }
@@ -55,7 +90,7 @@ html {
   .custom_heading_style .custom_heading {
     text-align: center;
   }
-  .noFeatured .removeFeatured {
+  /* .noFeatured .removeFeatured {
     display: none;
   }
   .noFeatured h2 {
@@ -66,14 +101,14 @@ html {
   .noFeatured span {
     font-size: 14px;
     line-height: 1.65;
-  }
-  .featured__home {
+  } */
+  .featuredCard {
     border: 1px solid #eaeaea;
-    padding: 20px;
+    padding: 24px;
     border-radius: 5px;
     transition: box-shadow 0.2s ease, border 0.2s ease;
   }
-  .featured__home:hover {
+  .featuredCard:hover {
     border: 1px solid transparent;
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
   }

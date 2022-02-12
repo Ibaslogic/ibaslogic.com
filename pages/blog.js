@@ -3,8 +3,8 @@ import Layout from "../components/Layout/Layout";
 import { getSortedPostData } from "../lib/mdx";
 import BlogItem from "../components/BlogItem";
 import Heading from "../components/Heading";
-import PageHeading from "../components/PageHeading";
-import PopularPosts from "../components/PopularPosts";
+import FeaturedPostSection from "../components/Blog/FeaturedPostSection";
+import FilterPostsHandle from "../components/FilterPostsHandle";
 
 export async function getStaticProps() {
   const postsData = await getSortedPostData("posts");
@@ -15,21 +15,53 @@ export async function getStaticProps() {
   };
 }
 
-const BlogPage = ({ postsData }) => {
-  const [searchPosts, setSearchPosts] = useState("");
-
-  const filteredPosts = postsData.filter((frontMatter) => {
-    return frontMatter.title.toLowerCase().includes(searchPosts.toLowerCase());
+const getCategories = (items) => {
+  let tempItems = items.map((item) => {
+    return item.category;
   });
+  let tempCategories = new Set(tempItems);
+  let categories = Array.from(tempCategories);
+  categories = ["all posts", ...categories];
+  return categories;
+};
+
+const BlogPage = ({ postsData }) => {
+  const [postItems] = useState(postsData);
+  const [blogPostItems, setBlogPostItems] = useState(postsData);
+  const [categories] = useState(getCategories(postsData));
+
+  const [selectedItem, setSelectedItem] = useState(
+    getCategories(postsData) && getCategories(postsData)[0]
+  );
+
+  // const [searchPosts, setSearchPosts] = useState("");
+
+  // const filteredPosts = postsData.filter((frontMatter) => {
+  //   return frontMatter.title.toLowerCase().includes(searchPosts.toLowerCase());
+  // });
+
+  // handle filter posts
+  const handleItems = (category) => {
+    let tempItems = [...postItems];
+    console.log(tempItems);
+    if (category === "all posts") {
+      setBlogPostItems(tempItems);
+      setSelectedItem(category);
+    } else {
+      let items = tempItems.filter((item) => item.category === category);
+      setBlogPostItems(items);
+      setSelectedItem(category);
+    }
+  };
 
   return (
     <Layout
-      title="Comprehensive Articles - Ibaslogic"
+      title="Comprehensive Articles"
       description="Read up-to-date dev post"
     >
-      <div className="w-full px-4 pt-12 pb-12 md:px-5 mx-auto max-w-4xl">
-        <PageHeading title="Blog." />
-        <div className="relative mb-6">
+      <section className="segoe-font bg-[#fafafa]">
+        <div className="w-full px-4 py-12 md:px-5 mx-auto max-w-4xl">
+          {/* <div className="relative mb-6">
           <input
             aria-label="Search the blog"
             type="text"
@@ -51,26 +83,33 @@ const BlogPage = ({ postsData }) => {
               d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
             />
           </svg>
-        </div>
-        {!searchPosts && (
-          <section>
-            <Heading title="Featured Posts" />
-            <div className="mt-6">
-              <PopularPosts containerStyle="grid mb-8 grid-custom sm:grid-custom-col-sm" />
-            </div>
-          </section>
-        )}
+        </div> */}
+          {/* {!searchPosts && (
+          
+        )} */}
 
-        <section>
-          <Heading title="All Stories" />
+          <Heading title="Featured Posts" />
+          <div className="mt-6 grid gap-5">
+            <FeaturedPostSection />
+            {/* grid mb-8 grid-custom sm:grid-custom-col-sm */}
+          </div>
+        </div>
+      </section>
+      <section>
+        <div className="w-full px-4 py-12 md:px-5 mx-auto max-w-4xl">
+          <FilterPostsHandle
+            categories={categories}
+            handleItems={handleItems}
+            selectedItem={selectedItem}
+          />
           <ul className="grid mt-6">
-            {!filteredPosts.length && <li className="">No posts detected</li>}{" "}
-            {filteredPosts.map((frontmatter) => (
+            {!postsData.length && <li className="">No posts detected</li>}{" "}
+            {blogPostItems.map((frontmatter) => (
               <BlogItem key={frontmatter.slug} {...frontmatter} />
             ))}
           </ul>
-        </section>
-      </div>
+        </div>
+      </section>
     </Layout>
   );
 };
