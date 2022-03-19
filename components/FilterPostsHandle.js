@@ -5,7 +5,7 @@ const FilterPostsHandle = ({ categories, handleItems, selectedItem }) => {
         return (
           <button
             className={`py-1 px-2.5 mr-3 text-sm rounded hover:bg-[#eff3f6] capitalize${
-              selectedItem === category ? " bg-[#eff3f6]" : ""
+              selectedItem === category ? " bg-[#eff3f6] font-bold" : ""
             }`}
             key={index}
             onClick={() => handleItems(category)}

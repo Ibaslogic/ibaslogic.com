@@ -66,7 +66,7 @@ const Layout = ({ children, ...customMeta }) => {
       <div className="flex-grow">
         <NewsTopbar />
         <Header />
-        <main className="pt-6">{children}</main>
+        <main>{children}</main>
       </div>
       <Footer />
     </div>

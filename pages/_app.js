@@ -2,7 +2,9 @@ import { useEffect } from "react";
 import { useRouter } from "next/router";
 import * as ga from "../lib/google-analytics";
 
+import "prismjs/themes/prism-tomorrow.css";
 import "../styles/globals.css";
+
 import Analytics from "../components/Analytics/Analytics";
 
 function MyApp({ Component, pageProps }) {

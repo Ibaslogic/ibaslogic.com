@@ -1,19 +1,21 @@
 const ContactContent = () => {
   return (
-    <div className="sm:flex">
-      <div className="sm:w-[300px] bg-[#1b1b1b] text-white">
-        <h1>Let's talk</h1>
+    <div className="sm:flex sm:justify-between z-10 bg-white sm:bg-[#fcfaff] relative w-full">
+      <div className="prose text-black sm:text-gray-400 mb-6 sm:mb-0 sm:w-[300px] md:w-[350px] sm:bg-[#1b1b1b] sm:p-8">
+        <h1 className="font-bold uppercase text-[2rem] mb-7 sm:!text-white">
+          Let's talk
+        </h1>
         <p>
           Have a question or want to talk about your project? Fill out the form
           and I'll get back to you as soon as posible.
         </p>
         <div>
           <p>
-            <span>Icon: </span>{" "}
+            <span>Email: </span>{" "}
             <a href={`mailto:ibas@ibaslogic.com`}>ibas@ibaslogic.com</a>
           </p>
           <p>
-            <span>icon: </span>
+            <span>Twitter: </span>
             <a
               href={`https://twitter.com/ibaslogic`}
               target="_blank"
@@ -24,8 +26,8 @@ const ContactContent = () => {
           </p>
         </div>
       </div>
-      <form method="post" className="flex-1">
-        <div className="">
+      <form method="post" className="flex-1 sm:p-8">
+        <div className="grid gap-4 mb-6">
           <select
             className="p-3 border border-gray-300 outline-none focus:border-gray-700 block rounded-md bg-white text-gray-700 w-full"
             name="discus"

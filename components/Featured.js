@@ -1,10 +1,9 @@
 import Link from "next/link";
-import Image from "next/image";
 
 import useSWR from "swr";
 import fetcher from "../lib/fetcher";
 
-const FeaturedPost = ({ title, description, slug, styling }) => {
+const FeaturedPost = ({ title, description, slug }) => {
   const { data } = useSWR(`/api/views/${slug}`, fetcher);
   const views = data?.total;
 
@@ -14,7 +13,7 @@ const FeaturedPost = ({ title, description, slug, styling }) => {
         <a className="block">
           <div className="">
             <div className="flex flex-wrap items-center justify-between text-[#1a1a1a] sm:col-span-2 sm:col-end-4">
-              <h2 className="mr-2 font-medium text-lg md:text-xl">{title}</h2>
+              <h2 className="mr-2 font-bold text-lg md:text-xl">{title}</h2>
               <span className="text-sm block text-gray-500">
                 {`${views ? new Number(views).toLocaleString() : "–––"} views`}
               </span>

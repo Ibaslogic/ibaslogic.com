@@ -1,11 +1,15 @@
 import Image from "next/image";
 import Layout from "./Layout";
+import Prism from "prismjs";
+import "prismjs/components/prism-jsx";
+import { useEffect } from "react";
 import { parseISO, format } from "date-fns";
 import ViewCounter from "../viewCounter";
 import { FaFacebookF, FaLinkedinIn, FaTwitter } from "react-icons/fa";
 import { FiEdit2 } from "react-icons/fi";
 // FiFacebook, FiLinkedin, FiTwitter,
 import SocialItem from "../SocialItem";
+import Comment from "../Comments";
 import config from "../../data/siteMetadata.js";
 
 const { author_avatar, siteUrl, twitterShare, siteRepo } = config;
@@ -30,6 +34,11 @@ const BlogLayout = ({ children, frontMatter }) => {
 
   const date = publishedAt === updatedAt ? publishedAt : updatedAt;
   const avatar = author ? author : author_avatar;
+
+  useEffect(() => {
+    setTimeout(Prism.highlightAll, 2000);
+    // Prism.highlightAll();
+  }, []);
 
   return (
     <Layout
@@ -88,6 +97,9 @@ const BlogLayout = ({ children, frontMatter }) => {
               </span>
             </a>
           </div>
+          <section className="mt-8 mb-7">
+            <Comment />
+          </section>
         </article>
 
         <aside className="max-w-[700px] mx-auto mt-14 lg:mt-0 lg:order-1 lg:w-[160px]">

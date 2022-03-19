@@ -1,30 +1,5 @@
-import { useState, useEffect } from "react";
-import { MdClose } from "react-icons/md";
-
-const useStorageValue = (key, defaultValue) => {
-  const [value, setValue] = useState(defaultValue);
-
-  useEffect(() => {
-    // const stickyValue = window.localStorage.getItem(key);
-    const saved = localStorage.getItem(key);
-    if (saved !== null) {
-      setValue(JSON.parse(saved));
-    }
-  }, [key]);
-
-  useEffect(() => {
-    window.localStorage.setItem(key, JSON.stringify(value));
-  }, [key, value]);
-
-  return [value, setValue];
-};
-
 const NewsTopbar = () => {
-  const [topBar, setTopbar] = useStorageValue("topBar", true);
-
-  const handleDisplay = () => {
-    setTopbar(false);
-  };
+  const topBar = true;
 
   return (
     <>
@@ -46,9 +21,7 @@ const NewsTopbar = () => {
                 </a>
               </strong>
             </p>
-            <button className="text-[20px]" onClick={handleDisplay}>
-              <MdClose />
-            </button>
+            <div>{/* some other things here */}</div>
           </div>
         </aside>
       )}

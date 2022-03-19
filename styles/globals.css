@@ -103,14 +103,15 @@ html {
     line-height: 1.65;
   } */
   .featuredCard {
-    border: 1px solid #eaeaea;
-    padding: 24px;
-    border-radius: 5px;
+    padding: 28px;
+    background-color: #fff;
+    border-radius: 6px;
+    border: 1px solid transparent;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
     transition: box-shadow 0.2s ease, border 0.2s ease;
   }
   .featuredCard:hover {
-    border: 1px solid transparent;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+    border: 1px solid #eaeaea;
   }
   .nl {
     display: block;
