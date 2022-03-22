@@ -1,13 +1,8 @@
 import Link from "next/link";
-
-import useSWR from "swr";
-import fetcher from "../lib/fetcher";
+import ViewCounter from "../components/viewCounter";
 
 const BlogItem = (props) => {
   const { title, slug } = props;
-
-  const { data } = useSWR(`/api/views/${slug}`, fetcher);
-  const views = data?.total;
 
   return (
     <li>
@@ -18,7 +13,7 @@ const BlogItem = (props) => {
               {title}
             </h2>
             <span className="text-[13px] block mt-1 sm:mt-0 text-gray-500">
-              {`${views ? new Number(views).toLocaleString() : "–––"} views`}
+              <ViewCounter slug={slug} />
             </span>
           </div>
         </a>

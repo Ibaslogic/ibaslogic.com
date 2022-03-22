@@ -8,7 +8,7 @@ const Contact = () => {
       title="Get in touch with Ibas"
       description="Want to talk about your project? Or have a question for me? Send me an email and I will get back to you shortly."
     >
-      <div className="relative w-full px-6 md:px-5 pt-12 pb-12 mx-auto max-w-5xl">
+      <main className="relative w-full px-6 md:px-5 pt-12 pb-12 mx-auto max-w-5xl">
         <figure className="absolute top-[-30px] left-[-30px] mb-0">
           <img
             className="w-[600px] h-auto max-w-full"
@@ -18,7 +18,7 @@ const Contact = () => {
           />
         </figure>
         <ContactContent />
-      </div>
+      </main>
     </Layout>
   );
 };

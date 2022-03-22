@@ -59,29 +59,31 @@ const BlogPage = ({ postsData }) => {
       title="Comprehensive Articles"
       description="Read up-to-date dev post"
     >
-      <section className="segoe-font bg-[#f7f6ed]">
-        <div className="w-full px-4 py-12 md:px-5 mx-auto max-w-4xl">
-          <Heading title="Featured Posts" />
-          <div className="mt-6 grid gap-5">
-            <FeaturedPostSection />
+      <main>
+        <section className="segoe-font bg-[#f7f6ed]">
+          <div className="w-full px-4 py-12 md:px-5 mx-auto max-w-4xl">
+            <Heading title="Featured Posts" />
+            <div className="mt-6 grid gap-5">
+              <FeaturedPostSection />
+            </div>
           </div>
-        </div>
-      </section>
-      <section>
-        <div className="w-full px-4 py-12 md:px-5 mx-auto max-w-4xl">
-          <FilterPostsHandle
-            categories={categories}
-            handleItems={handleItems}
-            selectedItem={selectedItem}
-          />
-          <ul className="grid mt-6">
-            {!postsData.length && <li className="">No posts detected</li>}{" "}
-            {blogPostItems.map((frontmatter) => (
-              <BlogItem key={frontmatter.slug} {...frontmatter} />
-            ))}
-          </ul>
-        </div>
-      </section>
+        </section>
+        <section>
+          <div className="w-full px-4 py-12 md:px-5 mx-auto max-w-4xl">
+            <FilterPostsHandle
+              categories={categories}
+              handleItems={handleItems}
+              selectedItem={selectedItem}
+            />
+            <ul className="grid mt-6">
+              {!postsData.length && <li className="">No posts detected</li>}{" "}
+              {blogPostItems.map((frontmatter) => (
+                <BlogItem key={frontmatter.slug} {...frontmatter} />
+              ))}
+            </ul>
+          </div>
+        </section>
+      </main>
     </Layout>
   );
 };

@@ -51,58 +51,57 @@ const BlogLayout = ({ children, frontMatter }) => {
       external_post={external_post}
       external_url={external_url}
     >
-      <div className="w-full px-6 pt-12 pb-12 md:px-5 lg:flex mx-auto max-w-5xl">
-        <article className="max-w-[700px] mx-auto lg:mx-5 lg:order-2">
-          <div className="space-y-5 mb-8">
-            <h1 className="font-bold text-[2rem] md:text-5xl leading-[1.3] text-black tracking-tight">
-              {title}
-            </h1>
-            <div className="sm:flex justify-between text-sm text-gray-500">
-              <div className="flex flex-wrap items-center">
-                <Image
-                  width={25}
-                  height={25}
-                  src={avatar}
-                  className="rounded-full bg-gray-200"
-                  alt="Ibas Majid"
-                />
-                <p className="ml-2">
-                  {`by Ibas・`}
-                  {format(parseISO(date), "MMMM dd, yyyy")}
-                </p>
-              </div>
-              <div className="flex flex-wrap items-center">
-                <p>
-                  <span>
-                    <ViewCounter slug={slug} />
-                  </span>
-                  <span>・</span>
-                  <span>{readingTime.text}</span>
-                </p>
+      <div className="w-full px-6 py-12 md:px-5 lg:grid mx-auto max-w-5xl post_wrap">
+        <main className="max-w-[700px] mx-auto lg:mx-5 post_main">
+          <article>
+            <div className="space-y-5 mb-8">
+              <h1 className="font-bold text-[2rem] md:text-5xl leading-[1.3] text-black tracking-tight">
+                {title}
+              </h1>
+              <div className="sm:flex justify-between text-sm text-gray-500">
+                <div className="flex flex-wrap items-center">
+                  <Image
+                    width={25}
+                    height={25}
+                    src={avatar}
+                    className="rounded-full bg-gray-200"
+                    alt="Ibas Majid"
+                  />
+                  <p className="ml-2">
+                    {`by Ibas・`}
+                    {format(parseISO(date), "MMMM dd, yyyy")}
+                  </p>
+                </div>
+                <div className="flex flex-wrap items-center">
+                  <p>
+                    <span>
+                      <ViewCounter slug={slug} />
+                    </span>
+                    <span>・</span>
+                    <span>{readingTime.text}</span>
+                  </p>
+                </div>
               </div>
             </div>
-          </div>
 
-          <div className="prose max-w-none w-full">{children}</div>
-          <div className="text-sm text-gray-500 mt-8">
-            <a
-              className="inline-flex items-center"
-              href={editPost(slug)}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              {"Edit post on GitHub"}{" "}
-              <span className="ml-2">
-                <FiEdit2 />
-              </span>
-            </a>
-          </div>
-          <section className="mt-8 mb-7">
-            <Comment />
-          </section>
-        </article>
+            <div className="prose max-w-none w-full">{children}</div>
+            <div className="text-sm text-gray-500 mt-8">
+              <a
+                className="inline-flex items-center"
+                href={editPost(slug)}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {"Edit post on GitHub"}{" "}
+                <span className="ml-2">
+                  <FiEdit2 />
+                </span>
+              </a>
+            </div>
+          </article>
+        </main>
 
-        <aside className="max-w-[700px] mx-auto mt-14 lg:mt-0 lg:order-1 lg:w-[160px]">
+        <aside className="max-w-[700px] mx-auto mt-14 lg:mt-0 lg:w-[160px] post_aside">
           <div className="lg:sticky lg:top-[120px] text-gray-400">
             <p className="capitalize text-base font-semibold mb-7 text-gray-800">
               share
@@ -130,7 +129,10 @@ const BlogLayout = ({ children, frontMatter }) => {
             </div>
           </div>
         </aside>
-        <div className="lg:flex-grow lg:order-3"></div>
+        <section className="max-w-[700px] mx-auto lg:mx-5 mt-8 post_additonal_section">
+          <Comment />
+        </section>
+        {/* <div className="lg:flex-grow lg:order-3"></div> */}
       </div>
     </Layout>
   );

@@ -11,7 +11,7 @@ const SinglePost = ({ mdxSource, frontMatter }) => {
       {frontMatter.draft !== true ? (
         <BlogLayout frontMatter={frontMatter}>
           <MDXRemote {...mdxSource} components={{ ...MDXComponents }} />
-        </BlogLayout> 
+        </BlogLayout>
       ) : (
         <div className="flex justify-center items-center min-h-screen">
           <h1 className="text-4xl font-medium">Post still in draft</h1>

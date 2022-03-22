@@ -7,26 +7,24 @@ import Heading from "../components/Heading";
 const SeriesPage = () => {
   return (
     <Layout title="Series Posts" description="Read up-to-date dev post">
-      <div>
-        <div className="w-full grid gap-8 px-4 pt-12 pb-12 md:px-5 mx-auto max-w-4xl">
-          <section>
-            <Heading title="React series" />
-            <ol className="mt-6 mb-6">
-              {reactSeries.map(({ title, href }) => (
-                <BlogItem key={title} title={title} slug={href} />
-              ))}
-            </ol>
-          </section>
-          <section>
-            <Heading title="Gatsby series" />
-            <ol className="mt-6">
-              {gatsbySeries.map(({ title, href }) => (
-                <BlogItem key={title} title={title} slug={href} />
-              ))}
-            </ol>
-          </section>
-        </div>
-      </div>
+      <main className="w-full grid gap-8 px-4 pt-12 pb-12 md:px-5 mx-auto max-w-4xl">
+        <section>
+          <Heading title="React series" />
+          <ol className="mt-6 mb-6">
+            {reactSeries.map(({ title, href }) => (
+              <BlogItem key={title} title={title} slug={href} />
+            ))}
+          </ol>
+        </section>
+        <section>
+          <Heading title="Gatsby series" />
+          <ol className="mt-6">
+            {gatsbySeries.map(({ title, href }) => (
+              <BlogItem key={title} title={title} slug={href} />
+            ))}
+          </ol>
+        </section>
+      </main>
     </Layout>
   );
 };

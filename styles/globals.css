@@ -167,4 +167,44 @@ html {
   .content {
     grid-area: content;
   }
+
+  /* Blog post */
+  /* Series posts links */
+
+  .prose ul > li.seriesLinkItem {
+    padding: 0;
+  }
+  .prose ul > li.seriesLinkItem::before {
+    content: normal;
+  }
+  @media screen and (min-width: 640px) {
+    .seriesLinkItem {
+      width: calc(50% - 1.2rem);
+    }
+  }
+
+  .prose ul > li.seriesLinkItem a {
+    color: #195faa;
+    text-decoration: none;
+  }
+
+  /* Custom post page layout */
+  @media screen and (min-width: 1024px) {
+    .post_wrap {
+      grid-template-columns: 160px minmax(0, 1fr);
+      grid-template-areas: "aside main" "aside section";
+    }
+    .post_main {
+      grid-area: main;
+      margin: 0;
+    }
+    .post_aside {
+      grid-area: aside;
+      margin: 0;
+    }
+    .post_additonal_section {
+      grid-area: section;
+      margin: 40px 0 0;
+    }
+  }
 }

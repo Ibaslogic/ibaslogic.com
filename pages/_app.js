@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useRouter } from "next/router";
-import * as ga from "../lib/google-analytics";
+import { pageview } from "../lib/google-analytics";
+// import * as ga from "../lib/google-analytics";
 
 import "prismjs/themes/prism-tomorrow.css";
 import "../styles/globals.css";
@@ -12,7 +13,8 @@ function MyApp({ Component, pageProps }) {
 
   useEffect(() => {
     const handleRouteChange = (url) => {
-      ga.pageview(url);
+      // ga.pageview(url);
+      pageview(url, document.title);
     };
     router.events.on("routeChangeComplete", handleRouteChange);
 
@@ -20,7 +22,8 @@ function MyApp({ Component, pageProps }) {
     return () => {
       router.events.off("routeChangeComplete", handleRouteChange);
     };
-  }, [router.events]);
+  }, []);
+  // }, [router.events]);
 
   return (
     <>

@@ -19,7 +19,7 @@ const Header = () => {
   };
 
   return (
-    <header className="z-[1000] relative md:sticky md:top-0 md:right-0 md:left-0 bg-white h-[62px] w-full text-[#24292f] segoe-font">
+    <header className="z-[1000] sticky top-0 md:right-0 md:left-0 bg-white h-[62px] w-full text-[#24292f] segoe-font">
       {/*fixed shadow */}
       <div className="flex justify-between items-center px-6 md:px-5 max-w-[68rem] mx-auto h-[62px] flex-wrap">
         <div className="flex items-center justify-start flex-row-reverse flex-nowrap ">

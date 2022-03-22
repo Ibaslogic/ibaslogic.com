@@ -9,9 +9,11 @@ const Home = () => {
       title="Helping You Improving Your Web Dev Knowledge!"
       description="Web dev Articles for the Self-Starters."
     >
-      <Hero />
-      <PopularPostSection />
-      <NewsletterHome />
+      <main>
+        <Hero />
+        <PopularPostSection />
+        <NewsletterHome />
+      </main>
     </Layout>
   );
 };

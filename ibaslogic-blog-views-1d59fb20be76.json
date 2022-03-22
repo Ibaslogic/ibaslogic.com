@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "ibaslogic-blog-views",
+  "private_key_id": "1d59fb20be76fca9c1242792f2a7142d727cf718",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDK4wFTJ/6GhfEJ\npobxgzdST8havATqr6LAmuHlsFq8KmdYkLarUqMNEJ4X9WieiXnjwzBEn+QAHJh4\nJs7IgyGpLGQaeO20B/yuG00g3rVAsTEJlmZ5peBBru5SmvpKcXH9qJz6/G70HPg2\nH6IW9SKZSiZlP4j62nW7xwuU9LI48BnAzmEEX+0a9jNMGQHPSn3E/2ugzEWF4E+D\nfPSlof5Lc1FmA5rIUN2NVM5tyeh0HukrwikzJUnEWMOeaGzgVYxOo4tTHhweELIj\nqb/jo3ldPIJCqG4swmczE+zoKQEGhViN2IRLhj2G40Eh9RzAvi0b4pQiwU7luhz/\nnwXs5ZS/AgMBAAECggEABy34+4eEScq5SLqkYYKKYCF4+RZYjtzamQ9CDt3qmr2z\nZ4kYyxTttoYlL2WHUhOSWn2AmppqjUMgdXawxZwNAmQS7MmPu9m2gYtvc3TTcYUe\nXkpSDlxQ2ceGISqL0JDq1ED1wSn9W9UfRtG1a4jkNGF73K8JZWXQBG5FmiaonJF5\nGLPLLeaKGqZTR6Jn2PhgMv4obdCaootG5JZyI6bzd77CLUkH9liIcwQ+JRX4oegl\nv7ZAlLJf/OQSGPyA2M3PUIJfW+Rm2X25M7OKRSm5ECC4ZLCaRE+5OD3UgmRHk6yq\nOwX/rsBBP1dqpsh1JOg8NbxgQe3TCQikdHhIZ8/TlQKBgQDntnYd3fyGBrcm1l6v\nt8ij/qfslTuxUZNvnyaQyIF6DGdo3nHLtlavqKmkO6vIYuVikzmiMkVDlUUhh3gt\nsetpLmLC7+aKNNNvq7eDb9Pg/NePKH+AsfQoey2o8RfIMAzXHrxEm7e2oVxrJ9JI\n4OyTYajq4CV+jIFLdwieaEAXIwKBgQDgJw6Ok4jN2DR1pG/QKiM2zn087Ylasi9j\n9qkij3+UyEQoZoqpZ+l/PbpJv3PCcBsnIPfo5tRI3RKtghLoVHrdo/nuM6rzQ30r\nWe6F5A3mlP+BAufvMz2jTQX94h4V1SNH5yWESBIVGROYYQCZHAdFbwaJFhPvPCvU\nxwn0MVXztQKBgQDjvDVDDZbPs3H3PeI6GgudAwDQSawtjtu1bVpeGnMHHYHVVCvL\n6B4y7zYsMGmZvXlt9P1EKNxinCch2R+I6cFR00FGDrsrQtg8fS0UhahdDKRgE5Gd\nT0mFL+uki7CwFGnKVG79j350hQtsVesbrdVW1TlL/5laU4YQQaG67wNuuQKBgGpw\nIWlyhTO5xq9WNgITAEW2J6IW6XI3ymkdZ5MRsPNlZXgJuS5YOXhCR4NddgqOUVZz\nQUVG1ucCkyvw6CmKdA1rH/MMddCt63H6clkBwdgMSIdqadgb7Njuajn0dXTIkMhD\n6ny1/GAoWDWzWiVaOdmurtvJsA2Z9PZEzWU3SClBAoGAAv9PEdUwva8eR+6n6zWE\nL6yQjCUPBhVP2UmLDntDyQ8XZJA0ucwZfOVn8PUqwjAmXzasdjuyZ//Lpxu2ij1e\nIPDsISvvqKBAM5wfZXWUv3OIaZ6H9IiC7p/9qYM5+ZM/df/Sbjyj/RYRDLXtqTiv\n08aLHpyKFyER1rxFf7E48IM=\n-----END PRIVATE KEY-----\n",
+  "client_email": "page-views@ibaslogic-blog-views.iam.gserviceaccount.com",
+  "client_id": "111434946358436348840",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/page-views%40ibaslogic-blog-views.iam.gserviceaccount.com"
+}
