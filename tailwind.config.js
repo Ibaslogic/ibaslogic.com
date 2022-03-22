@@ -7,7 +7,9 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["Inter", "Segoe UI", ...fontFamily.sans],
+        inter: ["Inter", ...fontFamily.sans],
+        // segoe: ['"Segoe UI"', "Inter", ...fontFamily.sans],
+        // merri: ["Merriweather", ...fontFamily.serif],
       },
       typography: (theme) => ({
         DEFAULT: {

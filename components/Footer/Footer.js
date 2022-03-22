@@ -27,7 +27,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-gray-50 text-[#24292f] text-[0.9em] pt-12 pb-9 sm:pt-12 sm:pb-9 border border-solid border-[#eaeaea] segoe-font">
+    <footer className="bg-gray-50 text-[#24292f] text-[0.9em] pt-12 pb-9 sm:pt-12 sm:pb-9 border border-solid border-[#eaeaea]">
       <div className="px-6 md:px-5 mx-auto max-w-[68rem]">
         <div className="grid grid-cols-1 gap-y-6 sm:flex sm:flex-row sm:flex-wrap sm:justify-between">
           <div className="grid grid-cols-2 gap-6 sm:flex sm:flex-wrap sm:justify-between sm:flex-grow sm:mr-8 md:mr-20">

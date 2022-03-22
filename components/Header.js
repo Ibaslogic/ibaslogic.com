@@ -19,14 +19,14 @@ const Header = () => {
   };
 
   return (
-    <header className="z-[1000] sticky top-0 md:right-0 md:left-0 bg-white h-[62px] w-full text-[#24292f] segoe-font">
+    <header className="z-[1000] sticky top-0 md:right-0 md:left-0 bg-white h-[62px] w-full text-[#24292f]">
       {/*fixed shadow */}
       <div className="flex justify-between items-center px-6 md:px-5 max-w-[68rem] mx-auto h-[62px] flex-wrap">
         <div className="flex items-center justify-start flex-row-reverse flex-nowrap ">
           <div className="ml-2 sm:ml-0 sm:mr-5">
             <Link href="/">
               <a className="flex">
-                <img className="w-9 h-auto" src="/static/logo.png" alt="" />
+                <img className="w-9 h-9" src="/static/logo.png" alt="" />
               </a>
             </Link>
           </div>
@@ -60,7 +60,7 @@ const Header = () => {
             {navLinks.map(({ link, label }, index) => (
               <li className="first:mt-20 sm:first:mt-0" key={index}>
                 <Link href={`${link}`}>
-                  <a className="block border-b border-solid border-[#cfd6dd] sm:border-none text-base leading-[24px] tracking-tight hover:opacity-75 capitalize sm:px-4 py-4">
+                  <a className="block border-b border-solid border-[#cfd6dd] sm:border-none text-base leading-[24px] tracking-tight opacity-75 hover:opacity-100 capitalize sm:px-4 py-4">
                     {label}
                   </a>
                 </Link>

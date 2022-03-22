@@ -101,12 +101,10 @@ const BlogLayout = ({ children, frontMatter }) => {
           </article>
         </main>
 
-        <aside className="max-w-[700px] mx-auto mt-14 lg:mt-0 lg:w-[160px] post_aside">
-          <div className="lg:sticky lg:top-[120px] text-gray-400">
-            <p className="capitalize text-base font-semibold mb-7 text-gray-800">
-              share
-            </p>
-            <div className="flex flex-row items-center mb-8 lg:items-start lg:flex-col">
+        <aside className="max-w-[700px] mx-auto mt-12 lg:mt-0 lg:w-[100px] post_aside">
+          <div className="lg:sticky lg:top-[240px] text-gray-400 flex flex-col items-start lg:items-center justify-center">
+            <p className="capitalize text-base mb-6 text-gray-800">share</p>
+            <div className="flex flex-row items-center lg:items-start lg:flex-col">
               <SocialItem
                 Icon={FaTwitter}
                 link={`https://twitter.com/share?url=${siteUrl}/${slug}/&text=${title}&via=${twitterShare}`}

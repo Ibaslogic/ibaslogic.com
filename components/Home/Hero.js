@@ -5,14 +5,14 @@ import { TiLocationArrow } from "react-icons/ti";
 
 const Hero = () => {
   return (
-    <section className="py-12 md:pt-16">
+    <section className="py-16">
       <div className="w-full px-4 md:px-5 mx-auto max-w-5xl text-center">
         <div className="flex justify-center">
           <SocialButton
             Icon={FaTwitter}
             link="https://twitter.com/intent/follow?screen_name=ibaslogic&amp;region=follow_link"
             label="Follow @ibaslogic"
-            className="flex items-center space-x-1 my-0 mx-1.5  py-2 px-2 text-xs rounded text-white bg-[#1b95e0] border-[#7490a7] hover:bg-[#066cbb]"
+            className="flex items-center space-x-1 my-0 mx-1.5  py-2 px-2 text-xs rounded text-white bg-[#066cbb] hover:bg-[#1b95e0] border-[#7490a7]"
           />
           <SocialButton
             Icon={BiStar}

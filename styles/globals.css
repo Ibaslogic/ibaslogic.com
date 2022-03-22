@@ -3,22 +3,51 @@
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
-  font-family: "Merriweather";
-  src: url(/fonts/Merriweather-Regular.woff2) format("woff2");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
+@layer base {
+  /* inter-300 - latin */
+  @font-face {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 300;
+    font-display: swap;
+    src: url("/fonts/inter-v8-latin-300.woff2") format("woff2"); /* Super Modern Browsers */
+  }
 
-@font-face {
-  font-family: "Merriweather";
-  src: url(/fonts/Merriweather-Bold.woff2) format("woff2");
-  font-weight: bold;
-  font-style: normal;
-  font-display: swap;
-}
+  /* inter-regular - latin */
+  @font-face {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url("/fonts/inter-v8-latin-regular.woff2") format("woff2"); /* Super Modern Browsers */
+  }
 
+  /* inter-700 - latin */
+  @font-face {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url("/fonts/inter-v8-latin-700.woff2") format("woff2"); /* Super Modern Browsers */
+  }
+
+  /* @font-face {
+    font-family: "Merriweather";
+    src: url(/fonts/Merriweather-Regular.woff2) format("woff2");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Merriweather";
+    src: url(/fonts/Merriweather-Bold.woff2) format("woff2");
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+  } */
+
+  /*
 @font-face {
   font-family: "Inter";
   font-style: normal;
@@ -28,6 +57,11 @@
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
     U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
     U+FEFF, U+FFFD;
+} */
+
+  body {
+    @apply font-inter;
+  }
 }
 
 /* custom styles */
@@ -38,8 +72,6 @@ html {
 
 .prose {
   color: #1a1a1a;
-  font-family: Merriweather;
-  /* font-size: 1.125rem; */
   font-weight: 400;
   line-height: 1.8;
 }
@@ -62,13 +94,10 @@ html {
 }
 
 .shareIconStyle {
-  @apply text-[20px] text-black hover:text-white rounded-full bg-[#f3f4f7] p-[10px] hover:bg-[#6678ff] transition mr-7 mb-[10px];
+  @apply text-[20px] text-black hover:text-white rounded-full bg-[#f3f4f7] p-[10px] hover:bg-[#6678ff] transition mr-7 lg:mr-0 mb-[10px];
 }
 
 @layer utilities {
-  .segoe-font {
-    font-family: Segoe UI;
-  }
   .grid-custom {
     grid-template-columns: 60px 1fr;
   }

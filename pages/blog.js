@@ -60,7 +60,7 @@ const BlogPage = ({ postsData }) => {
       description="Read up-to-date dev post"
     >
       <main>
-        <section className="segoe-font bg-[#f7f6ed]">
+        <section className="bg-[#fff]">
           <div className="w-full px-4 py-12 md:px-5 mx-auto max-w-4xl">
             <Heading title="Featured Posts" />
             <div className="mt-6 grid gap-5">

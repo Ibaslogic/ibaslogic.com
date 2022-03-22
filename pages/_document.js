@@ -8,12 +8,26 @@ class MyDocument extends Document {
         <Head>
           <link
             rel="preload"
-            href="/fonts/inter-var-latin.woff2"
+            href="/fonts/inter-v8-latin-300.woff2"
             as="font"
             type="font/woff2"
             crossOrigin="anonymous"
           />
           <link
+            rel="preload"
+            href="/fonts/inter-v8-latin-regular.woff2"
+            as="font"
+            type="font/woff2"
+            crossOrigin="anonymous"
+          />
+          <link
+            rel="preload"
+            href="/fonts/inter-v8-latin-700.woff2"
+            as="font"
+            type="font/woff2"
+            crossOrigin="anonymous"
+          />
+          {/* <link
             rel="preload"
             href="/fonts/Merriweather-Regular.woff2"
             as="font"
@@ -26,7 +40,7 @@ class MyDocument extends Document {
             as="font"
             type="font/woff2"
             crossOrigin="anonymous"
-          />
+          /> */}
           <link rel="icon" href="/static/favicon.png" />
         </Head>
         <body className="bg-white text-[#111]">
