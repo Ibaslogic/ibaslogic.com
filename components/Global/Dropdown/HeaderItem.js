@@ -30,7 +30,7 @@ const HeaderItem = ({ items }) => {
   };
 
   return (
-    <li
+    <div
       ref={ref}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
@@ -57,7 +57,7 @@ const HeaderItem = ({ items }) => {
           {items.label}
         </a>
       )}
-    </li>
+    </div>
   );
 };
 

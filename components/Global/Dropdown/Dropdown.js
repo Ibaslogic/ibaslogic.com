@@ -6,7 +6,7 @@ const Dropdown = ({ submenus, dropdown }) => {
       }`}
     >
       {submenus.map((submenu, index) => (
-        <li key={index} className="relative text-sm">
+        <li key={index}>
           <a
             className="hover:bg-[#f2f2f2] capitalize block text-left py-[0.7rem] px-4"
             href="/#"
