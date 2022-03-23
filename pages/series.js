@@ -7,7 +7,7 @@ import Heading from "../components/Heading";
 const SeriesPage = () => {
   return (
     <Layout title="Series Posts" description="Read up-to-date dev post">
-      <main className="w-full grid gap-8 px-4 pt-12 pb-12 md:px-5 mx-auto max-w-4xl">
+      <main className="w-full grid gap-8 px-6 pt-12 pb-12 md:px-5 mx-auto max-w-4xl">
         <section>
           <Heading title="React series" />
           <ol className="mt-6 mb-6">

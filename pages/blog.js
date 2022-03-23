@@ -61,7 +61,7 @@ const BlogPage = ({ postsData }) => {
     >
       <main>
         <section className="bg-[#fff]">
-          <div className="w-full px-4 py-12 md:px-5 mx-auto max-w-4xl">
+          <div className="w-full px-6 py-12 md:px-5 mx-auto max-w-4xl">
             <Heading title="Featured Posts" />
             <div className="mt-6 grid gap-5">
               <FeaturedPostSection />

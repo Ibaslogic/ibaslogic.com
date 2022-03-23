@@ -4,7 +4,7 @@ import FeaturedPost from "../Featured";
 const PopularPostSection = () => {
   return (
     <section className="custom_heading_style py-12">
-      <div className="px-4 md:px-5 mx-auto max-w-6xl">
+      <div className="px-6 md:px-5 mx-auto max-w-6xl">
         <Heading
           title="popular articles"
           desc="Level up your Dev knowledge with these actionable guides."

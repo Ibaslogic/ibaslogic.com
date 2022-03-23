@@ -6,6 +6,7 @@ import SocialItem from "./SocialItem";
 
 import { FaGithub } from "react-icons/fa";
 import { MdClose } from "react-icons/md";
+import HeaderItemsRender from "./Global/Dropdown/HeaderItemsRender";
 
 const Header = () => {
   const [navbarOpen, setNavbarOpen] = useState(false);
@@ -69,13 +70,14 @@ const Header = () => {
           </ul>
         </nav>
         <div className="flex-1" />
-        <div className="flex items-center justify-center">
+        <div className="flex items-center justify-center gap-3">
           <SocialItem
             Icon={FaGithub}
             link="#"
             title="Star on Github"
             style="text-[21px]"
           />
+          <HeaderItemsRender />
         </div>
       </div>
     </header>
