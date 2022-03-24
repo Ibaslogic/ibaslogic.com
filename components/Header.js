@@ -4,7 +4,7 @@ import navLinks from "../data/navLinks";
 
 import SocialItem from "./SocialItem";
 
-import { FaGithub } from "react-icons/fa";
+import { FaGithub, FaTwitter } from "react-icons/fa";
 import { MdClose } from "react-icons/md";
 import HeaderItemsRender from "./Global/Dropdown/HeaderItemsRender";
 
@@ -22,7 +22,7 @@ const Header = () => {
   return (
     <header className="z-[1000] sticky top-0 md:right-0 md:left-0 bg-white h-[62px] w-full text-[#24292f]">
       {/*fixed shadow */}
-      <div className="flex justify-between items-center px-6 md:px-5 max-w-[68rem] mx-auto h-[62px] flex-wrap">
+      <div className="flex justify-between items-center content-center px-6 md:px-5 max-w-[68rem] mx-auto h-[62px] flex-wrap">
         <div className="flex items-center justify-start flex-row-reverse flex-nowrap ">
           <div className="ml-2 sm:ml-0 sm:mr-5">
             <Link href="/">
@@ -33,10 +33,10 @@ const Header = () => {
           </div>
           <button
             onClick={openDrawer}
-            className="relative cursor-pointer w-[38px] h-[60px] bg-transparent border-none focus:outline-none mr-2 px-1 sm:hidden"
+            className="relative cursor-pointer w-[38px] h-[40px] bg-transparent border-none focus:outline-none mr-2 px-1 sm:hidden"
           >
-            <div className="absolute block h-[1px] w-[22px] bg-black top-[25px]" />
-            <div className="absolute block h-[1px] w-[22px] bg-black top-[33px]" />
+            <div className="absolute block h-[1px] w-[22px] bg-black top-[15px]" />
+            <div className="absolute block h-[1px] w-[22px] bg-black top-[23px]" />
           </button>
         </div>
         <nav className="w-full order-2 block sm:order-none sm:h-auto sm:w-auto">
@@ -47,7 +47,7 @@ const Header = () => {
               tabIndex="0"
               onClick={closeDrawer}
             >
-              <button className="absolute top-[15px] right-[15px] cursor-pointer text-white bg-transparent border-none focus:outline-none">
+              <button className="absolute top-[16px] right-[15px] cursor-pointer text-white bg-transparent border-none focus:outline-none">
                 <MdClose style={{ fontSize: "24px" }} />
               </button>
             </div>
@@ -70,11 +70,17 @@ const Header = () => {
           </ul>
         </nav>
         <div className="flex-1" />
-        <div className="flex items-center justify-center gap-3">
+        <div className="flex items-center justify-center gap-2">
           <SocialItem
             Icon={FaGithub}
             link="#"
             title="Star on Github"
+            style="text-[21px]"
+          />
+          <SocialItem
+            Icon={FaTwitter}
+            link="#"
+            title="Follow on Twitter"
             style="text-[21px]"
           />
           <HeaderItemsRender />

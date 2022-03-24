@@ -39,13 +39,14 @@ const HeaderItem = ({ items }) => {
       {items.submenu ? (
         <>
           <button
-            className="w-full text-left py-[0.7rem] px-2"
+            className="text-[22px] text-left p-2 h-10 w-10 mr-[-12px]"
             type="button"
             aria-haspopup="menu"
             aria-expanded={dropdown ? "true" : "false"}
             onClick={() => setDropdown((prev) => !prev)}
           >
-            {items.label} <span className="arrow" />
+            {items.label}
+            {/* <span className="arrow" /> */}
           </button>
           <Dropdown submenus={items.submenu} dropdown={dropdown} />
         </>

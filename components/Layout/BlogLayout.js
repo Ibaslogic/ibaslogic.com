@@ -103,7 +103,7 @@ const BlogLayout = ({ children, frontMatter }) => {
 
         <aside className="max-w-[700px] mx-auto mt-12 lg:mt-0 lg:w-[100px] post_aside">
           <div className="lg:sticky lg:top-[240px] text-gray-400 flex flex-col items-start lg:items-center justify-center">
-            <p className="capitalize text-base mb-6 text-gray-800">share</p>
+            <p className="uppercase text-xs mb-3 text-gray-800">share</p>
             <div className="flex flex-row items-center lg:items-start lg:flex-col">
               <SocialItem
                 Icon={FaTwitter}
@@ -115,7 +115,7 @@ const BlogLayout = ({ children, frontMatter }) => {
                 Icon={FaFacebookF}
                 link={`https://www.facebook.com/sharer/sharer.php?u=${siteUrl}/${slug}/`}
                 title="facebook"
-                style="shareIconStyle lg:mt-[13px]"
+                style="shareIconStyle lg:mt-[8px]"
               />
 
               <SocialItem

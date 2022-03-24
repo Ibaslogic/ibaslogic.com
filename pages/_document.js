@@ -11,21 +11,21 @@ class MyDocument extends Document {
             href="/fonts/inter-v8-latin-300.woff2"
             as="font"
             type="font/woff2"
-            crossOrigin="anonymous"
+            crossorigin="anonymous"
           />
           <link
             rel="preload"
             href="/fonts/inter-v8-latin-regular.woff2"
             as="font"
             type="font/woff2"
-            crossOrigin="anonymous"
+            crossorigin="anonymous"
           />
           <link
             rel="preload"
             href="/fonts/inter-v8-latin-700.woff2"
             as="font"
             type="font/woff2"
-            crossOrigin="anonymous"
+            crossorigin="anonymous"
           />
           {/* <link
             rel="preload"

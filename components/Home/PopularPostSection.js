@@ -9,7 +9,7 @@ const PopularPostSection = () => {
           title="popular articles"
           desc="Level up your Dev knowledge with these actionable guides."
         />
-        <div className="grid mt-12 grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid mt-12 grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
           <FeaturedPost
             title="React Tutorial From Scratch: A Step-by-Step Guide (2021)"
             description="In this React tutorial for beginners, you will learn every step by step to build a React project. Besides, you will be able to deploy on the web."

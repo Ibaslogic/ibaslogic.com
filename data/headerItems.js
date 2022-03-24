@@ -1,9 +1,11 @@
+import { BiDotsVerticalRounded } from "react-icons/bi";
+
 export const headerItems = [
   {
-    label: "More",
+    label: <BiDotsVerticalRounded />,
     submenu: [
       {
-        label: "suppport me",
+        label: "support me",
         url: "#",
       },
       {

@@ -9,6 +9,16 @@ const SeriesPage = () => {
     <Layout title="Series Posts" description="Read up-to-date dev post">
       <main className="w-full grid gap-8 px-6 pt-12 pb-12 md:px-5 mx-auto max-w-4xl">
         <section>
+          <div>
+            <h1 className="text-2xl sm:text-4xl lg:text-5xl font-bold !leading-[1.2] mb-6">
+              Up-to-date Guides
+            </h1>
+            <p className="text-2xl mb-10 !leading-[1.1]">
+              Level up your Dev knowledge with our series of in-depth guides.
+            </p>
+          </div>
+        </section>
+        <section>
           <Heading title="React series" />
           <ol className="mt-6 mb-6">
             {reactSeries.map(({ title, href }) => (
