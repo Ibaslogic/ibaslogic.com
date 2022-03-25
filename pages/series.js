@@ -8,7 +8,7 @@ const SeriesPage = () => {
   return (
     <Layout title="Series Posts" description="Read up-to-date dev post">
       <main className="w-full ">
-        <section className="pt-24 pb-24 bg-[#2b2631] text-white">
+        <section className="pt-20 pb-20 bg-[#2b2631] text-white">
           <div className="mx-auto max-w-4xl px-6 md:px-5">
             <h1 className="text-2xl sm:text-4xl lg:text-4xl font-bold !leading-[1.2] mb-6">
               In-Depth Guides

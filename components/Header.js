@@ -33,7 +33,7 @@ const Header = () => {
           </div>
           <button
             onClick={openDrawer}
-            className="relative cursor-pointer w-10 h-10 bg-transparent border-none focus:outline-none mr-2 ml-[-6px] flex items-center justify-center sm:hidden"
+            className="relative cursor-pointer w-10 h-10 bg-transparent border-none focus:outline-none mr-2 ml-[-6px] rounded-[50%] flex items-center justify-center sm:hidden"
           >
             <div className="absolute block h-[1px] w-[22px] bg-black top-[15px]" />
             <div className="absolute block h-[1px] w-[22px] bg-black top-[23px]" />

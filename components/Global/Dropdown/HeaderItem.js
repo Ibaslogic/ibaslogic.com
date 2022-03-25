@@ -39,7 +39,7 @@ const HeaderItem = ({ items }) => {
       {items.submenu ? (
         <>
           <button
-            className="text-[23px] h-10 w-10 mr-[-12px] flex items-center justify-center"
+            className="text-[23px] h-10 w-10 mr-[-12px] rounded-[50%] flex items-center justify-center"
             type="button"
             aria-haspopup="menu"
             aria-expanded={dropdown ? "true" : "false"}
