@@ -102,7 +102,7 @@ const BlogLayout = ({ children, frontMatter }) => {
         </main>
 
         <aside className="max-w-[700px] mx-auto mt-12 lg:mt-0 lg:w-[100px] post_aside">
-          <div className="lg:sticky lg:top-[240px] text-gray-400 flex flex-col items-start lg:items-center justify-center">
+          <div className="lg:sticky lg:top-[200px] text-gray-400 flex flex-col items-start lg:items-center justify-center">
             <p className="uppercase text-xs mb-3 text-gray-800">share</p>
             <div className="flex flex-row items-center lg:items-start lg:flex-col">
               <SocialItem

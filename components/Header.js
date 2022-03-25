@@ -33,7 +33,7 @@ const Header = () => {
           </div>
           <button
             onClick={openDrawer}
-            className="relative cursor-pointer w-[38px] h-[40px] bg-transparent border-none focus:outline-none mr-2 px-1 sm:hidden"
+            className="relative cursor-pointer w-10 h-10 bg-transparent border-none focus:outline-none mr-2 ml-[-6px] flex items-center justify-center sm:hidden"
           >
             <div className="absolute block h-[1px] w-[22px] bg-black top-[15px]" />
             <div className="absolute block h-[1px] w-[22px] bg-black top-[23px]" />
@@ -61,7 +61,7 @@ const Header = () => {
             {navLinks.map(({ link, label }, index) => (
               <li className="first:mt-20 sm:first:mt-0" key={index}>
                 <Link href={`${link}`}>
-                  <a className="block border-b border-solid border-[#cfd6dd] sm:border-none text-base leading-[24px] tracking-tight opacity-75 hover:opacity-100 capitalize sm:px-4 py-4">
+                  <a className="block border-b border-solid border-[#cfd6dd] sm:border-none text-base leading-[24px] tracking-tight sm:opacity-75 sm:hover:opacity-100 capitalize sm:px-4 py-4">
                     {label}
                   </a>
                 </Link>

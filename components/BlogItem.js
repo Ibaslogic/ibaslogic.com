@@ -9,7 +9,7 @@ const BlogItem = (props) => {
       <Link href={`/${slug}/`}>
         <a className="block p-2 hover:bg-gray-100">
           <div className="flex flex-wrap items-center justify-between">
-            <h2 className="text-gray-900 mr-2 font-medium text-[16px] leading-normal">
+            <h2 className="text-gray-900 mr-2 font-medium text-[16px] leading-[1.1]">
               {title}
             </h2>
             <span className="text-[13px] block mt-1 sm:mt-0 text-gray-500">
