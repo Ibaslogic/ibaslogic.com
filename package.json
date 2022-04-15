@@ -32,6 +32,7 @@
     "yup": "^0.32.11"
   },
   "devDependencies": {
+    "@netlify/plugin-nextjs": "^4.0.0-rc.2",
     "autoprefixer": "^10.2.6",
     "postcss": "^8.3.0",
     "tailwindcss": "^2.1.4"
