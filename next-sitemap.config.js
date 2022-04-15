@@ -1,4 +1,4 @@
 module.exports = {
-  siteUrl: `https://ibaslogic.com`,
+  // siteUrl: `https://ibaslogic.com`,
   generateRobotsTxt: true,
 };
