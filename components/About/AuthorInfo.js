@@ -6,10 +6,10 @@ const AuthorInfo = () => {
     <>
       <div className="image">
         <Image
-          width={120}
-          height={120}
+          width={100}
+          height={100}
           src={avatar}
-          className=" block rounded-full bg-gray-200"
+          className="block h-[100px] w-[100px] object-cover rounded-full bg-gray-200"
           alt="Ibas Majid"
         />
       </div>

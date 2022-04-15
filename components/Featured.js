@@ -3,7 +3,7 @@ import ViewCounter from "./viewCounter";
 
 const FeaturedPost = ({ title, description, slug }) => {
   return (
-    <div className="featuredCard">
+    <div className="fence fenceTransition p-7">
       <Link href={`/${slug}/`}>
         <a className="block">
           <div>

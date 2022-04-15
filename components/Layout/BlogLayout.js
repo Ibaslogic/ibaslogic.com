@@ -61,10 +61,10 @@ const BlogLayout = ({ children, frontMatter }) => {
               <div className="sm:flex justify-between text-sm text-gray-500">
                 <div className="flex flex-wrap items-center">
                   <Image
-                    width={25}
-                    height={25}
+                    width={32}
+                    height={32}
                     src={avatar}
-                    className="rounded-full bg-gray-200"
+                    className="rounded-full h-8 w-8 object-cover bg-gray-200"
                     alt="Ibas Majid"
                   />
                   <p className="ml-2">
