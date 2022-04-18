@@ -1,7 +1,19 @@
+import { useState } from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
+import axios from "axios";
 
 const ContactForm = () => {
+  //   Form validation state
+  // const [errors, setErrors] = useState({});
+
+  //   Setting button text on form submission
+  const [buttonText, setButtonText] = useState("Send");
+
+  // Setting success or failure messages states
+  const [showSuccessMessage, setShowSuccessMessage] = useState(false);
+  const [showFailureMessage, setShowFailureMessage] = useState(false);
+
   const subjects = [
     "General inquiry",
     "Consulting inquiry",
@@ -10,19 +22,12 @@ const ContactForm = () => {
     "Ibaslogic site feature request",
   ];
 
-  const encode = (data) => {
-    return Object.keys(data)
-      .map(
-        (key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key])
-      )
-      .join("&");
-  };
-
   const validationSchema = Yup.object({
     subject: Yup.string().required("Please select a subject").oneOf(subjects),
     name: Yup.string()
-      .min(2, "Too short!")
+      .min(2, "Not valid/ too short")
       .max(50, "Too long!")
+      .trim()
       .required("Name is required!"),
     email: Yup.string()
       .email("Enter a valid email!")
@@ -38,34 +43,37 @@ const ContactForm = () => {
       message: "",
     },
     validationSchema,
-    onSubmit: (values, submitProps) => {
-      fetch("/", {
+    onSubmit: async (values, submitProps) => {
+      let config = {
         method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: encode({ "form-name": "contact v2", ...values }),
-      })
-        // .then(() => alert("Success!"))
-        .then((response) => {
-          if (!response.ok) {
-            throw new Error(
-              `There is an HTTP error: The status is ${response.status}`
-            );
-          } else if (response.ok) {
-            console.log("success!");
-            submitProps.resetForm();
-          } else {
-            // some other errors
-            console.log("something went wrong");
-          }
+        // url: `${process.env.NEXT_PUBLIC_API_URL}/api/contactForm`,
+        url: `/api/contactForm`,
+        headers: {
+          "Content-Type": "application/json",
+        },
+        data: values,
+      };
 
-          return response;
-        })
-        // .catch((error) => alert(error));
-        .catch((err) => {
-          console.log(err.message);
-        });
+      setShowSuccessMessage(false);
+      setShowFailureMessage(false);
+      setButtonText("Sending...");
 
-      // alert(JSON.stringify(values, null, 2));
+      try {
+        const response = await axios(config);
+        console.log(response.status);
+
+        if (response.status == 200) {
+          setShowSuccessMessage(true);
+          setShowFailureMessage(false);
+          submitProps.resetForm();
+        }
+      } catch (error) {
+        console.error(error);
+        setShowSuccessMessage(false);
+        setShowFailureMessage(true);
+      } finally {
+        setButtonText("Send");
+      }
     },
   });
 
@@ -80,25 +88,22 @@ const ContactForm = () => {
   ));
 
   const renderError = (message) => (
-    <p className="text-[#ff2a2a] text-sm">{message}</p>
+    <p className="text-[#ff2a2a] text-sm px-3 md:px-[30px] mt-[10px] ">
+      {message}
+    </p>
   );
 
   return (
     <form
       name="contact v2"
       // method="post"
-      data-netlify="true"
-      data-netlify-honeypot="bot-field"
-      // data-netlify-recaptcha="true"
-      className="flex-1 py-6 sm:p-6"
+      className="flex-1 py-6"
       onSubmit={formik.handleSubmit}
     >
-      <input type="hidden" name="bot-field" />{" "}
-      <input type="hidden" name="form-name" value="contact v2" />{" "}
-      <div className="grid gap-6 mb-6">
+      <div className="grid gap-6 md:gap-10 mb-6">
         <div>
           <select
-            className="selectField p-3 border border-gray-300 outline-none focus:border-gray-700 block bg-white text-gray-700 w-full"
+            className="selectField bg-transparent outline-none border-b border-gray-400 px-3 md:px-[30px] py-4 text-gray-700 w-full"
             arial-label="I'd like to talk about"
             id="subject"
             {...formik.getFieldProps("subject")}
@@ -116,7 +121,8 @@ const ContactForm = () => {
         <div className="grid gap-6 sm:grid-cols-2">
           <div>
             <input
-              className="p-3 border border-gray-300 outline-none focus:border-gray-700 block  bg-white text-gray-700 w-full"
+              className="bg-transparent outline-none border-b border-gray-400 px-3 md:px-[30px] py-4 text-gray-700 w-full"
+              // className="p-3 border border-gray-300 outline-none focus:border-gray-700 block  bg-white text-gray-700 w-full"
               type="text"
               placeholder="Name"
               id="name"
@@ -129,7 +135,7 @@ const ContactForm = () => {
           </div>
           <div>
             <input
-              className="p-3 border border-gray-300 outline-none focus:border-gray-700 block  bg-white text-gray-700 w-full"
+              className="bg-transparent outline-none border-b border-gray-400 px-3 md:px-[30px] py-4 text-gray-700 w-full"
               type="email"
               placeholder="Email Address"
               aria-label="your-email"
@@ -144,7 +150,7 @@ const ContactForm = () => {
 
         <div>
           <textarea
-            className="p-3 block w-full border border-gray-300 outline-none focus:border-gray-700 bg-white border-warm-gray-300 "
+            className="bg-[#f0efef] outline-none border-0 border-gray-400 p-3 md:p-[30px] text-gray-700 w-full"
             placeholder="Your message"
             aria-label="text-area"
             id="message"
@@ -163,79 +169,21 @@ const ContactForm = () => {
         aria-label="submit-form"
         className="text-center py-4 px-8 bg-[#1b1b1b] hover:bg-black text-white border-[#111827] tracking-widest rounded-sm"
       >
-        Submit
+        {buttonText}
       </button>
+      <div className="text-left">
+        {showSuccessMessage && (
+          <p className="text-green-500 font-semibold text-sm my-2">
+            Thank you! Your Message has been delivered.
+          </p>
+        )}
+        {showFailureMessage && (
+          <p className="text-red-500">
+            Oops! Something went wrong, please try again.
+          </p>
+        )}
+      </div>
     </form>
-
-    // <form
-    //   name="contact v2"
-    //   method="post"
-    //   data-netlify="true"
-    //   data-netlify-honeypot="bot-field"
-    //   data-netlify-recaptcha="true"
-    //   className="flex-1 py-6 sm:p-6"
-    // >
-    //   <input type="hidden" name="bot-field" />{" "}
-    //   <input type="hidden" name="form-name" value="contact v2" />{" "}
-    //   <div className="grid gap-6 mb-6">
-    //     <select
-    //       className="selectField p-3 border border-gray-300 outline-none focus:border-gray-700 block bg-white text-gray-700 w-full"
-    //       arial-label="I'd like to talk about"
-    //       name="discus"
-    //       required
-    //     >
-    //       <option value="" disabled selected>
-    //         I'd like to talk about...
-    //       </option>
-    //       <option value="General inquiry">General inquiry</option>
-    //       <option value="Consulting inquiry">Consulting inquiry</option>
-    //       <option value="Speaking request">Speaking request</option>
-    //       <option value="Feedback and suggestions">
-    //         Feedback and suggestions
-    //       </option>
-    //       <option value="Ibaslogic site - feature request">
-    //         Ibaslogic site feature request
-    //       </option>
-    //     </select>
-
-    //     <div className="grid gap-6 sm:grid-cols-2">
-    //       <input
-    //         className="p-3 border border-gray-300 outline-none focus:border-gray-700 block  bg-white text-gray-700 w-full"
-    //         type="text"
-    //         placeholder="Name"
-    //         name="name"
-    //         aria-label="your-name"
-    //         required
-    //       />
-
-    //       <input
-    //         className="p-3 border border-gray-300 outline-none focus:border-gray-700 block  bg-white text-gray-700 w-full"
-    //         type="email"
-    //         placeholder="Email Address"
-    //         aria-label="your-email"
-    //         name="email"
-    //         required
-    //       />
-    //     </div>
-
-    //     <textarea
-    //       className="p-3 block w-full border border-gray-300 outline-none focus:border-gray-700 bg-white border-warm-gray-300 "
-    //       placeholder="Your message"
-    //       aria-label="text-area"
-    //       name="message"
-    //       rows="6"
-    //       required
-    //     />
-
-    //     <div data-netlify-recaptcha="true"></div>
-    //   </div>
-    //   <button
-    //     aria-label="submit-form"
-    //     className="text-center py-4 px-8 bg-[#1b1b1b] hover:bg-black text-white border-[#111827] tracking-widest rounded-sm"
-    //   >
-    //     Submit
-    //   </button>
-    // </form>
   );
 };
 

@@ -5,11 +5,12 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "postbuild": "next-sitemap --config next-sitemap.config.js",
     "start": "next start"
   },
   "dependencies": {
     "@tailwindcss/typography": "^0.4.1",
-    "axios": "^0.21.1",
+    "axios": "^0.21.4",
     "comma-number": "^2.1.0",
     "date-fns": "^2.22.1",
     "firebase": "^8.6.7",
@@ -19,6 +20,8 @@
     "gray-matter": "^4.0.3",
     "next": "^12.0.11-canary.12",
     "next-mdx-remote": "^3.0.2",
+    "next-sitemap": "^2.5.20",
+    "nodemailer": "^6.7.3",
     "prismjs": "^1.27.0",
     "react": "17.0.2",
     "react-dom": "17.0.2",
@@ -32,7 +35,6 @@
     "yup": "^0.32.11"
   },
   "devDependencies": {
-    "@netlify/plugin-nextjs": "^4.3.2",
     "autoprefixer": "^10.2.6",
     "postcss": "^8.3.0",
     "tailwindcss": "^2.1.4"
