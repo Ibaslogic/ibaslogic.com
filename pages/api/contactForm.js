@@ -25,10 +25,10 @@ export default async (req, res) => {
       text: message,
       html: `<div>${message}</div>`,
     });
-    // console.log("Message sent", info.messageId);
+
+    console.log("Message sent", info.messageId);
   } catch (error) {
     console.log(error);
   }
-
-  res.status(200).json(req.body);
+  res.status(200).json({ status: "OK" });
 };
