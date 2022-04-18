@@ -46,8 +46,8 @@ const ContactForm = () => {
     onSubmit: async (values, submitProps) => {
       let config = {
         method: "POST",
-        // url: `${process.env.NEXT_PUBLIC_API_URL}/api/contactForm`,
-        url: `/api/contactForm`,
+        url: `${process.env.NEXT_PUBLIC_API_URL}/api/contactForm`,
+        // url: `/api/contactForm`,
         headers: {
           "Content-Type": "application/json",
         },
