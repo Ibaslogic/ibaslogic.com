@@ -55,7 +55,7 @@ const BlogLayout = ({ children, frontMatter }) => {
         <main className="max-w-[700px] mx-auto lg:mx-5 post_main">
           <article>
             <div className="space-y-5 mb-8">
-              <h1 className="font-bold text-[2rem] md:text-5xl leading-[1.3] text-black tracking-tight">
+              <h1 className="font-bold text-[2.2rem] md:text-5xl !leading-[1.3] text-black tracking-tight">
                 {title}
               </h1>
               <div className="sm:flex justify-between text-sm text-gray-500">

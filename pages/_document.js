@@ -22,6 +22,13 @@ class MyDocument extends Document {
           />
           <link
             rel="preload"
+            href="/fonts/inter-v8-latin-600.woff2"
+            as="font"
+            type="font/woff2"
+            crossOrigin="anonymous"
+          />
+          <link
+            rel="preload"
             href="/fonts/inter-v8-latin-700.woff2"
             as="font"
             type="font/woff2"

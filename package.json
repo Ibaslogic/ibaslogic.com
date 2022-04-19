@@ -9,7 +9,6 @@
     "start": "next start"
   },
   "dependencies": {
-    "@tailwindcss/typography": "^0.4.1",
     "axios": "^0.21.4",
     "comma-number": "^2.1.0",
     "date-fns": "^2.22.1",
@@ -35,8 +34,9 @@
     "yup": "^0.32.11"
   },
   "devDependencies": {
-    "autoprefixer": "^10.2.6",
-    "postcss": "^8.3.0",
-    "tailwindcss": "^2.1.4"
+    "@tailwindcss/typography": "^0.5.2",
+    "autoprefixer": "^10.4.4",
+    "postcss": "^8.4.12",
+    "tailwindcss": "^3.0.24"
   }
 }
