@@ -7,7 +7,7 @@ const FeaturedPost = ({ title, description, slug }) => {
       <Link href={`/${slug}/`}>
         <a className="block">
           <div>
-            <div className="flex flex-wrap items-center justify-between text-[#1a1a1a] sm:col-span-2 sm:col-end-4">
+            <div className="flex flex-wrap items-center justify-between sm:col-span-2 sm:col-end-4">
               <h2 className="mr-2 font-bold text-2xl mb-1">{title}</h2>
               <span className="text-sm block text-gray-500">
                 <ViewCounter slug={slug} />

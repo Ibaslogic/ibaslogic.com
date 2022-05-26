@@ -3,6 +3,7 @@ import Image from "next/image";
 import OriginallyWrittenFor from "./OriginallyWrittenFor";
 import PostNextUnit from "../components/Global/Custom/PostNextUnit";
 import PostSeriesLink from "../components/Global/Custom/PostSeriesLink";
+import Prerequisite from "../components/Global/Custom/Prerequisite";
 
 const CustomLink = (props) => {
   const { href } = props;
@@ -33,6 +34,7 @@ const CustomImage = (props) => {
 
 const MDXComponents = {
   OriginallyWrittenFor,
+  Prerequisite,
   PostNextUnit,
   PostSeriesLink,
   // Image,

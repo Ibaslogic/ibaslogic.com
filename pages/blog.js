@@ -43,7 +43,6 @@ const BlogPage = ({ postsData }) => {
   // handle filter posts
   const handleItems = (category) => {
     let tempItems = [...postItems];
-    console.log(tempItems);
     if (category === "all posts") {
       setBlogPostItems(tempItems);
       setSelectedItem(category);

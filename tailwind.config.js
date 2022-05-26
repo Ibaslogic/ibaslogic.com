@@ -23,7 +23,7 @@ module.exports = {
               color: "#0070f3",
               textDecoration: "none",
               "&:hover": {
-                color: "#0070f3",
+                textDecoration: "underline",
               },
             },
             h1: {
@@ -61,6 +61,9 @@ module.exports = {
             },
             "code::after": {
               content: "none",
+            },
+            "ul > li::marker": {
+              color: "#000",
             },
             "blockquote p:first-of-type::before": false,
             "blockquote p:last-of-type::after": false,
