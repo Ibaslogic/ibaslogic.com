@@ -1,16 +1,16 @@
-import Image from "next/image";
-import Layout from "./Layout";
-import Prism from "prismjs";
-import "prismjs/components/prism-jsx";
-import { useEffect } from "react";
-import { parseISO, format } from "date-fns";
-import ViewCounter from "../viewCounter";
-import { FaFacebookF, FaLinkedinIn, FaTwitter } from "react-icons/fa";
-import { FiEdit2 } from "react-icons/fi";
+import Image from 'next/image';
+import Layout from './Layout';
+import Prism from 'prismjs';
+import 'prismjs/components/prism-jsx';
+import { useEffect } from 'react';
+import { parseISO, format } from 'date-fns';
+import ViewCounter from '../viewCounter';
+import { FaFacebookF, FaLinkedinIn, FaTwitter } from 'react-icons/fa';
+import { FiEdit2 } from 'react-icons/fi';
 // FiFacebook, FiLinkedin, FiTwitter,
-import SocialItem from "../SocialItem";
-import Comment from "../Comments";
-import config from "../../data/siteMetadata.js";
+import SocialItem from '../SocialItem';
+import Comment from '../Comments';
+import config from '../../data/siteMetadata.js';
 
 const { author_avatar, siteUrl, twitterShare, siteRepo } = config;
 
@@ -46,7 +46,7 @@ const BlogLayout = ({ children, frontMatter }) => {
       description={description}
       featured={featured}
       image={`${siteUrl}${featured}`}
-      date={new Date(updatedAt).toISOString()}
+      // date={new Date(updatedAt).toISOString()}
       type="article"
       external_post={external_post}
       external_url={external_url}
@@ -69,7 +69,7 @@ const BlogLayout = ({ children, frontMatter }) => {
                   />
                   <p className="ml-2">
                     {`by Ibas・`}
-                    {format(parseISO(date), "MMMM dd, yyyy")}
+                    {format(parseISO(date), 'MMMM dd, yyyy')}
                   </p>
                 </div>
                 <div className="flex flex-wrap items-center">
@@ -92,7 +92,7 @@ const BlogLayout = ({ children, frontMatter }) => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                {"Edit post on GitHub"}{" "}
+                {'Edit post on GitHub'}{' '}
                 <span className="ml-2">
                   <FiEdit2 />
                 </span>
@@ -103,7 +103,9 @@ const BlogLayout = ({ children, frontMatter }) => {
 
         <aside className="max-w-[700px] mx-auto mt-12 lg:mt-0 lg:w-[100px] post_aside">
           <div className="lg:sticky lg:top-[200px] text-gray-400 flex flex-col items-start lg:items-center justify-center">
-            <p className="uppercase text-xs mb-3 text-gray-800">share</p>
+            <p className="uppercase text-xs mb-3 text-gray-800">
+              share
+            </p>
             <div className="flex flex-row items-center lg:items-start lg:flex-col">
               <SocialItem
                 Icon={FaTwitter}

@@ -17,7 +17,7 @@
     "formik": "^2.2.9",
     "googleapis": "^77.0.0",
     "gray-matter": "^4.0.3",
-    "next": "^12.0.11-canary.12",
+    "next": "^12.2.4-canary.8",
     "next-mdx-remote": "^3.0.2",
     "next-sitemap": "^2.5.20",
     "nodemailer": "^6.7.3",
